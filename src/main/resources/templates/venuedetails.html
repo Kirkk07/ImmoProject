@@ -19,24 +19,27 @@
                 <div class="navbar-nav p-3">
                     <a class="navbar-brand text-warning " th:href="@{home}">Lets Party!</a>
                     <a class="nav-link text-white " th:href="@{home}">Home</a>
+                    <a class="nav-link  text-white active" th:href="@{venuedetails}">zaaldetails</a>
                     <a class="nav-link text-white active" th:href="@{about}">About</a>
-                    <a class="nav-link  text-white active" th:href="@{venuedetails}">VenueDetails</a>
+
 
                 </div>
             </div>
         </div>
     </nav>
 </header >
-<main class="m-5">
-<div>
-        <h1 th:text="*{venue.linkMoreInfo}"></h1>
-        <h4 th:text="${venue.getVenueName()}"></h4>
-        <p><a th:href="*{venue.getAppName()}" target="_blank" th:text="*{venue.getVenueName()}"></a></p>
-        <p th:text="${appName}"></p>
+<main class="m-5" th:object="${venue}">
 
+<div>
+        <h1 class="text-center" th:text="*{venueName}"></h1>
+        <!-- <h1><a th:href="*{linkMoreInfo}" target="_blank">Link</a></h1>-->
+    <!--  bu satirda basliga link ekledik yeni bir sekmede acilacak. -->
+        <p> Zie <a th:href="*{linkMoreInfo}" target="_blank" th:text="*{linkMoreInfo}">Link</a></p>
+        <p><a th:href="*{appName}" target="_blank" th:text="*{venueName}"></a></p>
+        <p th:text="*{appName}"></p>
 </div>
 
-    </main>
+</main>
 
 <div class=" fixed-bottom">
     <hr class="border-dark">

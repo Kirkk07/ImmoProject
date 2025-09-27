@@ -14,12 +14,15 @@ public class VenueController {
         this.venueRepository = venueRepository;
     };
     Venue venue = new Venue();
+
     @GetMapping("/venuedetails")
     public String venueDetails(Model model) {
         venueRepository.findById(1);
+        //Geef de fields van het object een waarde met de set-functies
         venue.setVenueName("BoesjKammeree");
-        venue.setLinkMoreInfo("https");
-        venue.setVenueName("Hallo Hallo It's Party Time");
+        venue.setLinkMoreInfo("https://www.youtube.com/");
+        //venue.setVenueName("Hallo Hallo It's Party Time");
+        //Geef dit object door via het model aan het thymeleaf template (de view).
         model.addAttribute("venue", venue);
         return "venuedetails";
 

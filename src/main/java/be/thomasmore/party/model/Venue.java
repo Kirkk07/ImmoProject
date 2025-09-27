@@ -10,6 +10,7 @@ public class Venue {
     private Integer id;
     private String venueName;
     private String linkMoreInfo;
+
     private String appName;
 
     public String getAppName() {
@@ -25,15 +26,12 @@ public class Venue {
     public String getVenueName() {
         return venueName;
     }
-
     public void setVenueName(String venueName) {
         this.venueName = venueName;
     }
-
     public String getLinkMoreInfo() {
         return linkMoreInfo;
     }
-
     public void setLinkMoreInfo(String venueLinkMoreInfo) {
         this.linkMoreInfo = venueLinkMoreInfo;
     }
