@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.Optional;
+
 @Controller
 public class VenueController {
     private VenueRepository venueRepository;
@@ -18,13 +20,18 @@ public class VenueController {
     @GetMapping("/venuedetails")
     public String venueDetails(Model model) {
         Venue venue = new Venue();
-        venueRepository.findById(1);
+        Optional<Venue> venueFromDb = venueRepository.findById(1);
+        if (venueFromDb.isPresent()) {
+            model.addAttribute("venue", venueFromDb.get());
+        }
+
+
         //Geef de fields van het object een waarde met de set-functies
         venue.setVenueName("BoesjKammeree");
         venue.setLinkMoreInfo("https://www.youtube.com/");
         //venue.setVenueName("Hallo Hallo It's Party Time");
         //Geef dit object door via het model aan het thymeleaf template (de view).
-        model.addAttribute("venue", venue);
+       // model.addAttribute("venue", venue);
         return "venuedetails";
 
 
