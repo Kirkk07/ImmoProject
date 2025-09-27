@@ -13,10 +13,11 @@ public class VenueController {
     public VenueController(VenueRepository venueRepository){
         this.venueRepository = venueRepository;
     };
-    Venue venue = new Venue();
+
 
     @GetMapping("/venuedetails")
     public String venueDetails(Model model) {
+        Venue venue = new Venue();
         venueRepository.findById(1);
         //Geef de fields van het object een waarde met de set-functies
         venue.setVenueName("BoesjKammeree");
@@ -28,22 +29,5 @@ public class VenueController {
 
 
     }
-//    @GetMapping({"/","/home"})
-//    public String home(Model model) {
-//        int myCalculatedvalue= 2342*2345;
-//        model.addAttribute("myCalculatedvalue", myCalculatedvalue);
-//        return "home";
-//    }
-//    @GetMapping ("/about")
-//    public String about(Model model) {
-//        String myName = "Hasan";
-//        String myStreet= "Hof van Tichelen";
-//        String myCity = "Antwerpen";
-//        model.addAttribute("myName", myName);
-//        model.addAttribute("myStreet", myStreet);
-//        model.addAttribute("myCity", myCity);
-//        return "about";
-//    }
-
 
 }
