@@ -14,16 +14,83 @@ public class Venue {
     private Integer id;
     private String venueName;
     private String linkMoreInfo;
-    private String appName;
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public boolean isFoodProvided() {
+        return foodProvided;
+    }
+
+    public void setFoodProvided(boolean foodProvided) {
+        this.foodProvided = foodProvided;
+    }
+
+    public boolean isIndoor() {
+        return indoor;
+    }
+
+    public void setIndoor(boolean indoor) {
+        this.indoor = indoor;
+    }
+
+    public boolean isOutdoor() {
+        return outdoor;
+    }
+
+    public void setOutdoor(boolean outdoor) {
+        this.outdoor = outdoor;
+    }
+
+    public boolean isFreeParkingAvailable() {
+        return freeParkingAvailable;
+    }
+
+    public void setFreeParkingAvailable(boolean freeParkingAvailable) {
+        this.freeParkingAvailable = freeParkingAvailable;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getDistanceFromPublicTransportInKm() {
+        return distanceFromPublicTransportInKm;
+    }
+
+    public void setDistanceFromPublicTransportInKm(int distanceFromPublicTransportInKm) {
+        this.distanceFromPublicTransportInKm = distanceFromPublicTransportInKm;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    //6.4 p33
+    private int capacity;
+    private boolean foodProvided;
+    private boolean indoor;
+    private boolean outdoor;
+    private boolean freeParkingAvailable;
+    private String city;
+    private int distanceFromPublicTransportInKm;
+    private String imageUrl;
 
     public Integer getId() {return id;}
     public void setId(Integer id) {this.id = id;}
-    public String getAppName() {
-        return appName;
-    }
-    public void setAppName(String appName) {
-        this.appName = appName;
-    }
     public String getVenueName() {
         return venueName;
     }

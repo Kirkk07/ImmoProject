@@ -19,22 +19,20 @@ public class VenueController {
 
     @GetMapping("/venuedetails")
     public String venueDetails(Model model) {
-        Venue venue = new Venue();
-        Optional<Venue> venueFromDb = venueRepository.findById(1);
-        if (venueFromDb.isPresent()) {
-            model.addAttribute("venue", venueFromDb.get());
+      //  Venue venue = new Venue();
+        Optional<Venue> optionalVenue = venueRepository.findById(1);
+        if (optionalVenue.isPresent()) {
+            Venue venue = optionalVenue.get();
+            model.addAttribute("venue", venue);
         }
-
+        return "venuedetails";
 
         //Geef de fields van het object een waarde met de set-functies
-        venue.setVenueName("BoesjKammeree");
-        venue.setLinkMoreInfo("https://www.youtube.com/");
+        //venue.setVenueName("BoesjKammeree");
+        //venue.setLinkMoreInfo("https://www.youtube.com/");
         //venue.setVenueName("Hallo Hallo It's Party Time");
         //Geef dit object door via het model aan het thymeleaf template (de view).
        // model.addAttribute("venue", venue);
-        return "venuedetails";
-
-
     }
 
 }

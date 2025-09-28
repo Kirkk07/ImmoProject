@@ -40,9 +40,4 @@ public class HomeController {
         return "pay";
     }
 
-
-//    @GetMapping ("/kay")
-//    public String kay(){
-//        return "homme07";
-//    }
 }
