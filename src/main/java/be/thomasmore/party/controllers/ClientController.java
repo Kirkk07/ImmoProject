@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalTime;
 import java.util.Optional;
+
 @Controller
 public class ClientController {
     private ClientRepository clientRepository;
 
-    public ClientController(ClientRepository clientRepository){
+    public ClientController(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
-    };
+    }
+
+    ;
 
 
     @GetMapping("/clientgreeting")
@@ -66,13 +69,14 @@ public class ClientController {
     }
 
     public double calculateDiscount(Client client) {
-        double discount =0;
+        double discount = 0;
         if (client.getTotalAmount() < 50) {
-             discount=0;
-        }else  if (client.getTotalAmount() < 80) {
-             discount=0.005;
+            discount = 0;
+        } else  {
+            discount = 0.005;
         }
-        client.setDiscountTaken(discount);
+
+
         return discount;
     }
 
@@ -82,18 +86,18 @@ public class ClientController {
         Optional<Client> optionalClient = clientRepository.findById(1);
         if (optionalClient.isPresent()) {
             Client client = optionalClient.get();
-            double discount=(calculateDiscount(client)* client.getTotalAmount());
-            client.setDiscountTaken(discount);
+            double discount = calculateDiscount(client) * client.getTotalAmount();
+
             model.addAttribute("client", client);
             model.addAttribute("discount", discount);
-}return "clientdetails"; }
+        }
+        return "clientdetails";
+    }
 
     @GetMapping("/clienthome")
     public String clientHomePage(Model model) {
         return "clienthome";
     }
-
-
 
 
 }

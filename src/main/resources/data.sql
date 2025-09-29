@@ -2,7 +2,7 @@ insert into venue (venue_name, link_more_info,capacity,food_provided,indoor,outd
 ('De Club', 'https://transitm.mechelen.be/de-club',150,false, true,false,
  true,'Mechelen',2,'/img/venue_club.jpg');
 
-ALTER TABLE client ALTER COLUMN discount_taken DROP NOT NULL;
+
 insert into client(name,nr_of_orders,total_amount,discount_taken) values(
 'Hasan',81,730.00,10);
 insert into client(name,nr_of_orders,total_amount,discount_taken) values(
