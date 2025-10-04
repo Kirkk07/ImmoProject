@@ -32,12 +32,38 @@
 <!--</header >-->
 <div class="container">
     <h1> Zalen</h1>
-<div class="">
-    <a th:href="@{/venuedetails/1}" class="btn btn-primary m-3">/1</a>
-    <a th:href="@{/venuedetails/2}" class="btn btn-primary m-3">/2</a>
-    <a th:href="@{/venuedetails/3}" class="btn btn-primary m-3">/3</a>
+<!--    Old version of Venuelist-->
 
-</div>
+<!--<div class="">-->
+<!--    <a th:href="@{/venuedetails/1}" class="btn btn-primary m-3">/1</a>-->
+<!--    <a th:href="@{/venuedetails/2}" class="btn btn-primary m-3">/2</a>-->
+<!--    <a th:href="@{/venuedetails/3}" class="btn btn-primary m-3">/3</a>-->
+
+<!--</div>-->
+    <!--    Iterated version of Venuelist-->
+    <div class="row ">
+        <div th:each="venue: ${venues}"
+            th:object="${venue}"
+            class="card-group col col-12 col-sm-6 col md-4 col-lg-3 col-xl-2">
+            <div class="card m-1 p-2 text-center">
+                <a th:href="@{|/venuedetails/*{id}|}" class="text-decoration-none d-block">
+                    <!-- Başlık -->
+                    <h3 th:text="*{venueName}" class="text-black mb-2"></h3>
+
+                    <!-- Kapasite -->
+                    <h6 th:text="|*{capacity} personen|" class="mb-2"></h6>
+
+                    <!-- Resim -->
+                    <div>
+                        <img th:src="${venue.imageUrl}"
+                             alt="Venue image"
+                             class="img-fluid rounded"
+                             style="max-width: 100%;">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 <!--    Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>

@@ -36,16 +36,24 @@ public class VenueController {
         //Geef dit object door via het model aan het thymeleaf template (de view).
        // model.addAttribute("venue", venue);
     }
+    // Burada Tymleaf iterator yaptik.
     @GetMapping("/venuelist")
     public String venueList(Model model) {
-        Optional<Venue> optionalVenue = venueRepository.findById(1);
-        if (optionalVenue.isPresent()) {
-            Venue venue = optionalVenue.get();
-            model.addAttribute("venue", venue);
-        }
+        final Iterable<Venue> allVenue = venueRepository.findAll() ;
+        model.addAttribute("venues", allVenue);
         return "venuelist";
 
     }
+//    @GetMapping("/venuelist")
+//    public String venueList(Model model) {
+//        Optional<Venue> optionalVenue = venueRepository.findById(1);
+//        if (optionalVenue.isPresent()) {
+//            Venue venue = optionalVenue.get();
+//            model.addAttribute("venue", venue);
+//        }
+//        return "venuelist";
+//
+//    }
 
 
 }
