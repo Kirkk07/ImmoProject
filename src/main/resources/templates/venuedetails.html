@@ -29,7 +29,7 @@
         </div>
     </nav>
 </header >
-<main class="m-5" th:object="${venue}">
+<main class="m-5" th:object="${venue}" th:if="${venue}">
 
 <div>
         <h1 class="text-center name" th:text="*{venueName}"></h1>
@@ -79,23 +79,25 @@
                         <div class="mb-2 p-1 be-white text-dark text-center border rounded">
                             <p class="m-2" th:text="|binnen: *{indoor ? 'ja' : 'nee'}|"></p>
                         </div>
-                        <div class="mb-2 p-1 be-white text-dark text-center border rounded">
-                            <p class="m-2" th:text="|gratis parking: *{freeParkingAvailable ? 'ja':'nee'}|"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-
-<div class=" fixed-bottom">
- <hr class="border-dark">
- <footer class="text-dark text-center py-3 mt-4">
-     <div class="container">
-         <p class="mb-0 ">©ThomasMore</p>
+                        <div class="mb-2 p-1 be-white text-dark text-center border rounded" th:if="*{freeParkingAvailable}" th:text="'gratis parking'">
+                            <!--  <p class="m-2" th:text="|gratis parking: *{freeParkingAvailable ? 'ja':'nee'}|"></p> -->
+                            <!-- <p class="m-2" th:if="*{freeParkingAvailable}" th:text="'gratis parking'"></p> -->
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
      </div>
- </footer></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+ </main>
+
+ <main class="m-5" th:object="${venue}" th:unless="${venue}"> <p>Geen Geldige zaal gekozen.</p></main>
+ <div class=" fixed-bottom">
+  <hr class="border-dark">
+  <footer class="text-dark text-center py-3 mt-4">
+      <div class="container">
+          <p class="mb-0 ">©ThomasMore</p>
+      </div>
+  </footer></div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+ </html>

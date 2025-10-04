@@ -18,8 +18,9 @@ public class VenueController {
     };
 
 
-    @GetMapping("/venuedetails/{id}")
-    public String venueDetails(Model model,@PathVariable int id) {
+    @GetMapping({"/venuedetails/{id}","/venuedetails"})
+    public String venueDetails(Model model, @PathVariable(required = false) Integer id) {
+        if(id==null) return "venuedetails";
       //  Venue venue = new Venue();
         Optional<Venue> optionalVenue = venueRepository.findById(id);
         if (optionalVenue.isPresent()) {

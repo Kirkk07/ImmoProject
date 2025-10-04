@@ -66,7 +66,7 @@ insert into VENUE
  CAPACITY, FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE, CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM,
  IMAGE_URL)
 values ('De Club', 'https://transitm.mechelen.be/de-club',
-        150, false, true, false, true, 'Mechelen', 2,
+        150, false, true, false, false, 'Mechelen', 2,
         '/img/venue_club.jpg');
 
 insert into VENUE
