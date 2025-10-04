@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+</head>
+<body>
+
+<header>
+<!--    <nav th:fragment="navbar" class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">-->
+    <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav p-3">
+                    <a class="navbar-brand text-warning" th:href="@{home}">Lets Party!</a>
+                    <a class="nav-link text-white " th:href="@{home}">Home</a>
+                    <a class="nav-link  text-white active" th:href="@{venuedetails}">zaaldetails</a>
+                    <a class="nav-link text-white active" th:href="@{about}">About</a>
+                    <a class="nav-link text-white active" th:href="@{venuelist}">VenueList</a>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header >
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 rounded">-->
+<!--    <div class="container-fluid bg-light">-->
+<!--        <a class="navbar-brand" th:href="@{home}">Lets Party!</a>-->
+<!--        <div class="navbar-nav">-->
+<!--            <a class="nav-link " th:href="@{home}">Home</a>-->
+<!--            <a class="nav-link active" th:href="@{about}">About</a>-->
+<!--            <a class="nav-link active" th:href="@{venuedetails}">VenueDetails</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+</body>
+</html>
