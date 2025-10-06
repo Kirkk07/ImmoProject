@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -37,6 +38,8 @@ public class HomeController {
         String formattedDate = payDate.format(formatter);
         model.addAttribute("payDate", formattedDate);
         model.addAttribute("now", formattedNow);
+        model.addAttribute("isWeekend", now.getDayOfWeek() == DayOfWeek.SATURDAY.plus(2)|| now.getDayOfWeek() == DayOfWeek.SUNDAY);
+
         return "pay";
     }
 

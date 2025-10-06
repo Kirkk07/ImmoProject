@@ -15,6 +15,11 @@
 <div class="datum2 p-3 rounded " >
     <p class="m-1" th:text="|De uiteerste datum van betalen is ${payDate}|"></p>
 </div>
+    <div class="datum2 p-3 mt-5 rounded " >
+        <p th:if="${isWeekend}" class="m-1">Prettig weekend, je hebt het verdiend!</p>
+        <p th:unless="${isWeekend}" class="m-1">Voor je het weet is het weekend!</p>
+    </div>
+
 </div>
 
 
