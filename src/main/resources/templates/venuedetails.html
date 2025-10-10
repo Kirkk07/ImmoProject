@@ -35,10 +35,24 @@
 <main class="m-5" th:object="${venue}" th:if="${venue}">
 
     <div>
-        <h1 class="text-center name" th:text="*{venueName}"></h1>
-    </div>
-
-    <h3 class=" venueName d-flex justify-content-center align-items-center p-3 " th:text="*{city}"></h3>
+        <h1 class="text-center name" th:text="*{venueName}"></h1> </div>
+<!--    Next butonu ve ID li-->
+        <div class="col text-start">
+            <div class="row">
+                <div class="col text-start">
+                    <a th:href="@{|/venuedetails/${prevId}|}" class="btn btn-outline-primary">
+                        &lt;
+                    </a>
+                </div>
+                <h3 class="col text-center  venueName d-flex justify-content-center align-items-center p-3">
+                    <div th:text="*{city}"/>
+                </h3>
+                <div class="col text-end">
+                    <a th:href="@{|/venuedetails/${nextId}|}" class="btn btn-outline-primary">
+                        &gt;
+                    </a>
+                </div>
+            </div>
 
     <div class="me -4 d-flex ">
         <p class="mb-0 me-2">Zie</p>

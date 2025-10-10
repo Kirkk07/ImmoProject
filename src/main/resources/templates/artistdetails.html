@@ -16,10 +16,21 @@
         <h1 class="text-center name" th:text="*{artistName}"></h1>
     </div>
 
+    <div class="row">
+        <div class="col text-start">
+            <a th:href="@{|/artistdetails/${prevId}|}" class="btn btn-outline-primary">
+                &lt;
+            </a>
+        </div>
+
+        <div class="col text-end">
+            <a th:href="@{|/artistdetails/${nextId}|}" class="btn btn-outline-primary">
+                &gt;
+            </a>
+        </div>
+    </div>
+
     <h3 class=" venueName d-flex justify-content-center align-items-center p-3 " th:text="*{genre}"></h3>
-
-
-
 
     <div class="container mt-4 ">
         <div class="row align-items-start ">

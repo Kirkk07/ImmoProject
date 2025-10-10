@@ -28,16 +28,23 @@ public class ArtistController {
         return "artistlist";
     }
 
-    @GetMapping({"/artistdetails", "/artistdetails/{id}"})
-        public String artistDetails (Model model, @PathVariable(required = false) Integer id){
-            if (id == null) return "artistdetails";
-            Optional<Artist> optionalArtist = artistRepository.findById(id);
-            if (optionalArtist.isPresent()) {
-                Artist artist = optionalArtist.get();
-                model.addAttribute("artist",artist);
-            }
-            return "artistdetails";
-        }
+    @GetMapping({"/artistdetails/{id}", "/artistdetails"})
+        public String artistDetails (Model model, @PathVariable(required = false) Integer id) {
+        if (id == null) return "artistdetails";
+        Optional<Artist> optionalArtist = artistRepository.findById(id);
+        long count = artistRepository.count();
+        if (optionalArtist.isPresent()) {
 
+            model.addAttribute("artist", optionalArtist.get());
+            model.addAttribute("prevId", id > 1 ? id - 1 : count);
+            model.addAttribute("nextId", id < count ? id + 1 : 1);
+
+        }
+        return "artistdetails";
     }
+
+}
+
+
+
 
