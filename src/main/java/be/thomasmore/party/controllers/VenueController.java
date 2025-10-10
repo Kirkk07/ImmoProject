@@ -18,7 +18,7 @@ public class VenueController {
     };
 
 
-    @GetMapping({"/venuedetails/{id}","/venuedetails"})
+    @GetMapping({"/venuedetails","/venuedetails/{id}"})
     public String venueDetails(Model model, @PathVariable(required = false) Integer id) {
         if(id==null) return "venuedetails";
       //  Venue venue = new Venue();
