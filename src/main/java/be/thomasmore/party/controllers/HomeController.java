@@ -1,5 +1,7 @@
 package be.thomasmore.party.controllers;
 
+import be.thomasmore.party.model.Artist;
+import be.thomasmore.party.repositories.ArtistRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,14 +10,18 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
+
 
 @Controller
 public class HomeController {
+
     @GetMapping({"/","/home"})
     public String home(Model model) {
-        int myCalculatedvalue= 2342*2345;
-        model.addAttribute("myCalculatedvalue", myCalculatedvalue);
+
         return "home";
+
+
     }
     @GetMapping ("/about")
     public String about(Model model) {

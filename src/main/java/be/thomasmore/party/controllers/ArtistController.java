@@ -39,6 +39,5 @@ public class ArtistController {
             return "artistdetails";
         }
 
-
     }
 

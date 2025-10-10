@@ -23,9 +23,12 @@ public class VenueController {
         if(id==null) return "venuedetails";
       //  Venue venue = new Venue();
         Optional<Venue> optionalVenue = venueRepository.findById(id);
+        long count=venueRepository.count();
         if (optionalVenue.isPresent()) {
-            Venue venue = optionalVenue.get();
-            model.addAttribute("venue", venue);
+
+            model.addAttribute("venue", optionalVenue.get());
+            model.addAttribute("prevId", id> 1? id - 1:count);
+            model.addAttribute("nextId", id< count ? id + 1:1);
         }
         return "venuedetails";
 
