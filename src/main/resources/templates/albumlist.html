@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head th:replace="~{fragments/header :: headerelement}"/>
+<body>
+<!--Navbar-->
+<div th:replace="~{fragments/header :: navbar}"/>
+
+
+
+<main class="container">
+    <h2>albums</h2>
+    <div class="row mt-3">
+        <div th:each="album:${albums}"
+             th:object="${album}"
+             class="card-group col col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="card m-1 text-center">
+                <!--                <a th:href="@{|/albumlist/*{id}|}"-->
+                <a th:href="@{|#|}"
+                   class="btn d-flex flex-column h-100">
+                    <h5 th:text="*{title}"></h5>
+                    <h3 th:text ="*{artist} "></h3>
+                    <h6 th:text ="|*{genre} (*{releaseYear} )| "></h6>
+                    <h5  th:if="*{priceEur < 15}"  th:text="|*{priceEur} €|" class="bg-warning"></h5>
+                    <h5  th:unless="*{priceEur < 15}"  th:text="|*{priceEur} €|" class=""></h5>
+                    <h5 th:if="*{availableStock< 50} " th:text="|Only *{availableStock} left!|"></h5>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+<!--footer-->
+<div th:replace="~{fragments/footer :: footerCommon}"></div>
+</body>
+</html>

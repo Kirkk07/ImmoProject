@@ -149,3 +149,39 @@ values ('Kruidtuin', 'https://www.mechelen.be/kruidtuin',
         500, false, false, true, false, 'Mechelen', 1,
         '/img/venue_kruidtuin.jpg');
 
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('Random Access Memories', 'Daft Punk', 2013, 'Electronic', 'Columbia Records', 15.99, 40);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('25', 'Adele', 2015, 'Pop', 'XL Recordings', 16.50, 200);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('Abbey Road', 'The Beatles', 1969, 'Rock', 'Apple Records', 18.99, 75);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('After Hours', 'The Weeknd', 2020, 'R&B', 'Republic Records', 15, 20);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('To Pimp a Butterfly', 'Kendrick Lamar', 2015, 'Hip-Hop', 'Top Dawg Entertainment', 17.99, 90);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('1989', 'Taylor Swift', 2014, 'Pop', 'Big Machine Records', 13.99, 110);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('Rumours', 'Fleetwood Mac', 1977, 'Rock', 'Warner Bros. Records', 14.50, 80);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('Currents', 'Tame Impala', 2015, 'Psychedelic Rock', 'Modular Recordings', 15.99, 95);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('Future Nostalgia', 'Dua Lipa', 2020, 'Pop', 'Warner Records', 14.49, 140);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('Blackstar', 'David Bowie', 2016, 'Art Rock', 'ISO Records', 16.99, 60);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('DAMN.', 'Kendrick Lamar', 2017, 'Hip-Hop', 'Top Dawg Entertainment', 15.99, 100);
+
+INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
+VALUES ('AM', 'Arctic Monkeys', 2013, 'Indie Rock', 'Domino Recording Company', 13.49, 130);
+
