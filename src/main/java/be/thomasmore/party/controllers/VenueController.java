@@ -44,6 +44,9 @@ public class VenueController {
     public String venueList(Model model) {
         final Iterable<Venue> allVenue = venueRepository.findAll() ;
         model.addAttribute("venues", allVenue);
+//Shows total Venuelist count( total) zalen.)
+        long venueCount = venueRepository.count();
+        model.addAttribute("venueCount", venueCount);
         return "venuelist";
 
     }

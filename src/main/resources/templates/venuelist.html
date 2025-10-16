@@ -32,6 +32,45 @@
 <!--</header >-->
 <div class="container">
     <h1> Zalen</h1>
+    <p>Er zijn in totaal <b th:text="${venueCount}">0</b> venues.</p>
+
+<!--    Search Buton-->
+    <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#filterModal">
+        Filters
+    </button>
+    <div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <form th:action="@{/venuelist}" method="get">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Filters</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body mx-2">
+                        <div class="col-12 p-1">
+                            <h5> Capasiteit </h5>
+                        </div>
+                        <div class="col-12 p-1">
+                            <label class="form-label">minimum</label>
+                            <div class="input-group">
+                                <input type="number" aria-label="minimum capaciteit" name="minCapacity"
+                                       placeholder="vul hier" step="50">
+                                <span class="input-group-text"> personen</span>
+                            </div>
+                        </div>
+
+                        <p>Hier komen de filters.</p>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div></div>
+
 <!--    Old version of Venuelist-->
 
 <!--<div class="">-->
@@ -65,8 +104,10 @@
         </div>
     </div>
 </div>
+
 <!--    Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>
 <!--<p th:text="${currentUrl}"></p>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
