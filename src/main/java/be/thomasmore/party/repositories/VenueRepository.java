@@ -8,7 +8,14 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface VenueRepository extends CrudRepository<Venue,Integer> {
-    @Query("SELECT v From Venue v Where :minCapacity is NULL or :minCapacity <= v.capacity")
-    List<Venue> findByFilter(@Param("minCapacity") Integer minCapacity);
-}
+
+
+        @Query("SELECT v FROM Venue v " +
+                "WHERE (:minCapacity IS NULL OR v.capacity >= :minCapacity) " +
+                "AND (:maxCapacity IS NULL OR v.capacity <= :maxCapacity)")
+        List<Venue> findByFilter(@Param("minCapacity") Integer minCapacity,
+                                 @Param("maxCapacity") Integer maxCapacity);
+    }
+
+
 
