@@ -11,8 +11,21 @@
 <!-- Navbar -->
 <div th:replace="~{fragments/header :: navbar}"/>
 
+
+
+<!--Search in ArtistList-->
 <div class="container">
-    <h1> Zalen</h1>
+    <h1> Artiesten</h1>
+    <div class=" d-flex align-items-center justify-content-between mb-3 col-12">
+        <p class="mb-0">Er zijn in totaal <b th:text="${artistCount}">0</b> artist.</p>
+        <form th:action="@{/artistlist}" method="get" class="d-flex align-items-center gap-2 w-25">
+            <input type="text" class="form-control" placeholder="Zoek" aria-label="search" name="search" th:value="${param.search}">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+
+        </form>
+    </div>
+
+
     <!--    Old version of Venuelist-->
 
     <!--<div class="">-->
