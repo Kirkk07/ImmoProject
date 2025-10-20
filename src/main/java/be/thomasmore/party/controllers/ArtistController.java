@@ -47,10 +47,16 @@ public class ArtistController {
     public String artistList(Model model,  @RequestParam(required = false) String search) {
         logger.info("artistlist: search={}", search);
 
-        final Iterable<Artist> artists = artistRepository.findByFilter(search);
-        model.addAttribute("artists", artists);
+        final Iterable<Artist> artists ;
+
+        if (search != null && !search.isEmpty()) {
+            artists = artistRepository.findByFilter(search);
+        } else {
+            artists = artistRepository.findAll();
+        }
         long artistCount = artistRepository.count();
         model.addAttribute("artistCount", artistCount);
+        model.addAttribute("artists", artists);
         return "artistlist";
     }
 

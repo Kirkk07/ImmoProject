@@ -50,16 +50,16 @@ public class VenueController {
     //Paramater Integer. De query parameter is not required
     //o Dat betekent dat het mogelijk is dat de parameter minCapacity null is.
     //o Dat is de reden waarom we hier een Integer gebruiken en geen gewone int.
-    public String venueList(Model model, @RequestParam(required = false) Integer minCapacity, @RequestParam(required = false) Integer maxCapacity) {
+    public String venueList(Model model, @RequestParam(required = false) Integer minCapacity, @RequestParam(required = false) Integer maxCapacity, @RequestParam(required = false) Integer maxAfstand) {
         //Logger// Burda String Format ile variable ekleniyor
         // De meest gebruikte types:
         //• %d: een getal (integer)
         //• %s: een string
         //• %f: een float of double
-        logger.info(String.format("venueList: minCapacity=%s, maxCapacity=%s", minCapacity, maxCapacity));
+        logger.info(String.format("venueList: minCapacity=%s, maxCapacity=%s, maxAfstand=%s ", minCapacity, maxCapacity, maxAfstand));
 
 
-        final Iterable<Venue> allVenue = venueRepository.findByFilter(minCapacity,maxCapacity) ;
+        final Iterable<Venue> allVenue = venueRepository.findByFilter(minCapacity,maxCapacity,maxAfstand) ;
 
         model.addAttribute("venues", allVenue);
 //Shows total Venuelist count( total) zalen.)

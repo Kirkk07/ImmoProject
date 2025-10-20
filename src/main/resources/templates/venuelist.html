@@ -47,7 +47,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-                    <div class="modal-body mx-2">
+                    <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
                         <div class="col-12 p-1">
                             <h5> Capasiteit </h5>
                         </div>
@@ -69,6 +69,24 @@
                                            th:value="${param.maxCapacity}"
                                            placeholder="vul hier" step="10">
                                     <span class="input-group-text"> personen</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-body mt-2 mx-2  border rounded-3 shadow-sm bg-light">
+                        <div class="col-12 p-1">
+                            <h5> Afstand </h5>
+                        </div>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label class="form-label">maxAfstand</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" aria-label="maximum afstand" name="maxAfstand"
+                                           th:value="${param.maxAfstand}"
+                                           placeholder="vul hier" step="1">
+                                    <span class="input-group-text"> km maximum</span>
                                 </div>
                             </div>
                         </div>

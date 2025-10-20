@@ -12,9 +12,10 @@ public interface VenueRepository extends CrudRepository<Venue,Integer> {
 
         @Query("SELECT v FROM Venue v " +
                 "WHERE (:minCapacity IS NULL OR v.capacity >= :minCapacity) " +
-                "AND (:maxCapacity IS NULL OR v.capacity <= :maxCapacity)")
+                "AND (:maxCapacity IS NULL OR v.capacity <= :maxCapacity)"+
+        "AND (:maxAfstand IS NULL OR v.distanceFromPublicTransportInKm <= :maxAfstand)")
         List<Venue> findByFilter(@Param("minCapacity") Integer minCapacity,
-                                 @Param("maxCapacity") Integer maxCapacity);
+                                 @Param("maxCapacity") Integer maxCapacity, @Param("maxAfstand") Integer maxAfstand);
     }
 
 
