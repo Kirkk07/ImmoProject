@@ -56,7 +56,8 @@
                             <div class="col-6">
                                 <label class="form-label">minimum</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" aria-label="minimum capaciteit" name="minCapacity"
+                                    <input type="number" class="form-control" aria-label="minimum capaciteit"
+                                           name="minCapacity"
                                            th:value="${param.minCapacity}"
                                            placeholder="vul hier" step="50">
                                     <span class="input-group-text"> personen</span>
@@ -65,7 +66,8 @@
                             <div class="col-6">
                                 <label class="form-label">maximum</label>
                                 <div class="input-group ">
-                                    <input type="number" class="form-control" aria-label="maximum capaciteit" name="maxCapacity"
+                                    <input type="number" class="form-control" aria-label="maximum capaciteit"
+                                           name="maxCapacity"
                                            th:value="${param.maxCapacity}"
                                            placeholder="vul hier" step="10">
                                     <span class="input-group-text"> personen</span>
@@ -83,22 +85,108 @@
                             <div class="col-6">
                                 <label class="form-label">maxAfstand</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" aria-label="maximum afstand" name="maxAfstand"
+                                    <input type="number" class="form-control" aria-label="maximum afstand"
+                                           name="maxAfstand"
                                            th:value="${param.maxAfstand}"
                                            placeholder="vul hier" step="1">
                                     <span class="input-group-text"> km maximum</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="modal-body mt-2 mx-2  border rounded-3 shadow-sm bg-light">
+                        <div class="col-12 p-1">
+                            <h5> eten mogelijk </h5>
+                        </div>
 
-                        <p>Hier komen de filters.</p>
+                        <div class="col-12 p-1">
+                            <div class="input-group-2 p-1">
+                                <div class="d-flex align-items-center gap-5">
+                                    <div class="input-group">
+                                        <input type="radio" aria-label="etenJaNee"
+                                               name="filterFood" class="form-check mx-2"
+                                               value="">
+                                        <span class="input-group-text "> Mag niet Uit</span>
+                                        <input type="radio" aria-label="etenJa"
+                                               name="filterFood" class="form-check mx-2"
+                                               th:checked="${param.filterFood != null and param.filterFood[0] == 'true'}"
+                                               value="true">
+                                        <span class="input-group-text"> ja</span>
+                                        <input type="radio" aria-label="etenNee"
+                                               name="filterFood" class="form-check mx-2"
+                                               value="false">
+                                        <span class="input-group-text"> nee</span>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="modal-body mt-2 mx-2  border rounded-3 shadow-sm bg-light">
+                        <div class="col-12 p-1">
+                            <h5> binnen </h5>
+                        </div>
+
+                        <div class="col-12 p-1">
+                            <div class="input-group-2 p-1">
+                                <div class="d-flex align-items-center gap-5">
+                                    <div class="input-group">
+                                        <input type="radio" aria-label="binnenJaNee"
+                                               name="binnen" class="form-check mx-2"
+                                               value="">
+                                        <span class="input-group-text "> Mag niet Uit</span>
+                                        <input type="radio" aria-label="binnenJa"
+                                               name="binnen" class="form-check mx-2"
+                                               th:checked="${param.binnen != null and param.binnen[0] == 'true'}"
+                                               value="true">
+                                        <span class="input-group-text"> ja</span>
+                                        <input type="radio" aria-label="binnenNee"
+                                               name="binnen" class="form-check mx-2"
+                                               value="false">
+                                        <span class="input-group-text"> nee</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body mt-2 mx-2  border rounded-3 shadow-sm bg-light">
+                        <div class="col-12 p-1">
+                            <h5> buiten </h5>
+                        </div>
+
+                        <div class="col-12 p-1">
+                            <div class="input-group-2 p-1">
+                                <div class="d-flex align-items-center gap-5">
+                                    <div class="input-group">
+                                        <input type="radio" aria-label="buitenJaNee"
+                                               name="buiten" class="form-check mx-2"
+                                               value="">
+                                        <span class="input-group-text "> Mag niet Uit</span>
+                                        <input type="radio" aria-label="etenJa"
+                                               name="buiten" class="form-check mx-2"
+                                               th:checked="${param.buiten != null and param.buiten[0] == 'true'}"
+                                               value="true">
+                                        <span class="input-group-text"> ja</span>
+                                        <input type="radio" aria-label="buitenNee"
+                                               name="buiten" class="form-check mx-2"
+                                               value="false">
+                                        <span class="input-group-text"> nee</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>Hier komen de filters.</p>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
                 </div>
+
             </form>
         </div>
     </div>
