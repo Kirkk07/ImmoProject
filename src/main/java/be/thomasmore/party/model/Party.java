@@ -1,9 +1,6 @@
 package be.thomasmore.party.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -21,6 +18,18 @@ public class Party {
     private LocalDate  date;
     private LocalTime doors;
     private String imageUrl;
+
+    @ManyToOne
+    private Venue venue;
+    @JoinColumn(name = "Venue_Id")
+
+    public Venue getVenue() {
+        return venue;
+    }
+
+    public void setVenue(Venue venue) {
+        this.venue = venue;
+    }
 
     public Integer getId() {
         return id;

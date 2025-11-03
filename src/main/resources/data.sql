@@ -1,42 +1,42 @@
 -- insert into venue (venue_name, link_more_info,capacity,food_provided,indoor,outdoor,free_parking_available,city,distance_from_public_transport_in_km,image_url) values
 -- ('De Club', 'https://transitm.mechelen.be/de-club',150,false, true,false,
 --  true,'Mechelen',2,'/img/venue_club.jpg');
-INSERT INTO PARTY
-(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
-VALUES ('Big Spring Party', 6, 10, '1 cocktail included',
-        '2025-10-10', '10:00',
-        '/img/party_spring.jpg');
-
-INSERT INTO PARTY
-(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
-VALUES ('Liberty 2025', null, 6, 'free vestiaire, viplounge',
-        '2025-10-25', '22:00',
-        '/img/party_liberty.jpg');
-
-INSERT INTO PARTY
-(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
-VALUES ('Uppercuts', null, null, ' ',
-        '2025-11-01', '21:00',
-        '/img/party_uppercuts.jpg');
-
-INSERT INTO PARTY
-(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
-VALUES ('Zoetzuur', null, null, 'Zoete house / Zure techno',
-        '2025-11-08', '21:00',
-        '/img/party_zoetzuur.jpg');
-
-INSERT INTO PARTY
-(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
-VALUES ('Oldies but Goldies', null, null, 'afterparty@home van THE BOX!',
-        '2025-10-31', '21:00',
-        '/img/party_oldiesbutgoldies.jpg');
-
-INSERT INTO PARTY
-(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
-VALUES ('Sapphire Soiree', 45, null,
-        'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!',
-        '2025-11-15', '21:00',
-        '/img/party_sapphiresoiree.jpg');
+-- INSERT INTO PARTY
+-- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
+-- VALUES ('Big Spring Party', 6, 10, '1 cocktail included',
+--         '2025-10-10', '10:00',
+--         '/img/party_spring.jpg');
+--
+-- INSERT INTO PARTY
+-- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
+-- VALUES ('Liberty 2025', null, 6, 'free vestiaire, viplounge',
+--         '2025-10-25', '22:00',
+--         '/img/party_liberty.jpg');
+--
+-- INSERT INTO PARTY
+-- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
+-- VALUES ('Uppercuts', null, null, ' ',
+--         '2025-11-01', '21:00',
+--         '/img/party_uppercuts.jpg');
+--
+-- INSERT INTO PARTY
+-- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
+-- VALUES ('Zoetzuur', null, null, 'Zoete house / Zure techno',
+--         '2025-11-08', '21:00',
+--         '/img/party_zoetzuur.jpg');
+--
+-- INSERT INTO PARTY
+-- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
+-- VALUES ('Oldies but Goldies', null, null, 'afterparty@home van THE BOX!',
+--         '2025-10-31', '21:00',
+--         '/img/party_oldiesbutgoldies.jpg');
+--
+-- INSERT INTO PARTY
+-- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
+-- VALUES ('Sapphire Soiree', 45, null,
+--         'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!',
+--         '2025-11-15', '21:00',
+--         '/img/party_sapphiresoiree.jpg');
 
 insert into client(name,nr_of_orders,total_amount,discount_taken) values(
 'Hasan',81,730.00,10);
@@ -220,3 +220,45 @@ VALUES ('DAMN.', 'Kendrick Lamar', 2017, 'Hip-Hop', 'Top Dawg Entertainment', 15
 INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock)
 VALUES ('AM', 'Arctic Monkeys', 2013, 'Indie Rock', 'Domino Recording Company', 13.49, 130);
 
+INSERT INTO PARTY
+(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url)
+VALUES ('Big Spring Party', 6, 10, '1 cocktail included',
+        '2025-10-10', '10:00',
+        (SELECT id FROM VENUE WHERE venue_name = 'De Club'),
+        '/img/party_spring.jpg');
+
+INSERT INTO PARTY
+(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url)
+VALUES ('Liberty 2025', null, 6, 'free vestiaire, viplounge',
+        '2025-10-25', '22:00',
+        (SELECT id FROM VENUE WHERE venue_name = 'De Loods'),
+        '/img/party_liberty.jpg');
+
+INSERT INTO PARTY
+(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url)
+VALUES ('Uppercuts', null, null, ' ',
+        '2025-11-01', '21:00',
+        (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'),
+        '/img/party_uppercuts.jpg');
+
+INSERT INTO PARTY
+(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url)
+VALUES ('Zoetzuur', null, null, 'Zoete house / Zure techno',
+        '2025-11-08', '21:00',
+        (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'),
+        '/img/party_zoetzuur.jpg');
+
+INSERT INTO PARTY
+(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url)
+VALUES ('Oldies but Goldies', null, null, 'afterparty@home van THE BOX!',
+        '2025-10-31', '21:00',
+        (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'),
+        '/img/party_oldiesbutgoldies.jpg');
+
+INSERT INTO PARTY
+(name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url)
+VALUES ('Sapphire Soiree', 45, null,
+        'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!',
+        '2025-11-15', '21:00',
+        (SELECT id FROM VENUE WHERE venue_name = 'Tivoli'),
+        '/img/party_sapphiresoiree.jpg');

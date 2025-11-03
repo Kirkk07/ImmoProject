@@ -1,4 +1,8 @@
 package be.thomasmore.party.repositories;
 
-public interface PartyRepository {
+import be.thomasmore.party.model.Party;
+import be.thomasmore.party.model.Venue;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PartyRepository extends CrudRepository<Party, Integer> {
 }
