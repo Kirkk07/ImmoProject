@@ -1,9 +1,8 @@
 package be.thomasmore.party.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
 
 
 @Entity
@@ -15,6 +14,38 @@ public class Venue {
     private String venueName;
     private String linkMoreInfo;
 
+    //6.4 p33
+    private int capacity;
+    private boolean foodProvided;
+    private boolean indoor;
+    private boolean outdoor;
+    private boolean freeParkingAvailable;
+    private String city;
+    private int distanceFromPublicTransportInKm;
+    private String imageUrl;
+
+    @OneToMany(mappedBy = "venue", fetch = FetchType.LAZY)
+    private Collection<Party> parties;
+
+
+
+
+
+
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id = id;}
+    public String getVenueName() {
+        return venueName;
+    }
+    public void setVenueName(String venueName) {
+        this.venueName = venueName;
+    }
+    public String getLinkMoreInfo() {
+        return linkMoreInfo;
+    }
+    public void setLinkMoreInfo(String venueLinkMoreInfo) {
+        this.linkMoreInfo = venueLinkMoreInfo;
+    }
     public int getCapacity() {
         return capacity;
     }
@@ -79,32 +110,15 @@ public class Venue {
         this.imageUrl = imageUrl;
     }
 
-    //6.4 p33
-    private int capacity;
-    private boolean foodProvided;
-    private boolean indoor;
-    private boolean outdoor;
-    private boolean freeParkingAvailable;
-    private String city;
-    private int distanceFromPublicTransportInKm;
-    private String imageUrl;
-
-    public Integer getId() {return id;}
-    public void setId(Integer id) {this.id = id;}
-    public String getVenueName() {
-        return venueName;
-    }
-    public void setVenueName(String venueName) {
-        this.venueName = venueName;
-    }
-    public String getLinkMoreInfo() {
-        return linkMoreInfo;
-    }
-    public void setLinkMoreInfo(String venueLinkMoreInfo) {
-        this.linkMoreInfo = venueLinkMoreInfo;
-    }
 
 
 
+    public Collection<Party> getParties() {
+        return parties;
     }
+
+    public void setParties(Collection<Party> parties) {
+        this.parties = parties;
+    }
+}
 

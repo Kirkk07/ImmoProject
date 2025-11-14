@@ -30,7 +30,9 @@
         </div>
     </div>
 
-    <h3 class=" venueName d-flex justify-content-center align-items-center p-3 " th:text="*{date}"></h3>
+    <h3 class=" venueName d-flex justify-content-center align-items-center p-3 " > <span  th:text="|*{date} in |"> </span>
+        <a th:href="@{/venuedetails/{id}(id=*{venue.id})}" th:text=" *{venue.venueName}"></a></h3>
+
 
     <div class="container mt-4 ">
         <div class="row align-items-start ">
@@ -44,40 +46,39 @@
                     <!-- 1. sütun -->
                     <div class="col-6 bg-light">
                         <div>
-                            <!-- Eğer priceInEur = 0 ise -->
-                            <span th:if="*{priceInEur == null}">
-        Gratis Party
+                            <!-- 1️⃣ Eğer her iki fiyat da yoksa -->
+                            <span th:if="*{priceInEur == null and pricePresaleInEur == null}">
+    Gratis Party
+</span>
+
+                            <!-- 2️⃣ Eğer en az bir fiyat varsa -->
+                            <span th:if="*{priceInEur != null or pricePresaleInEur != null}">
+
+    <!-- Presale varsa -->
+    <span th:if="*{pricePresaleInEur != null}" th:text="|*{pricePresaleInEur} (Voorverkoop)|">
     </span>
 
-                            <!-- Eğer fiyat 0 değilse (normal gösterim) -->
-                            <span th:if="*{priceInEur != 0}">
-        <!-- Sadece presale varsa -->
-        <span th:if="*{pricePresaleInEur != null}">
-            Presale: <span th:text="*{pricePresaleInEur}"></span>
-        </span>
-
-                                <!-- İkisi de varsa -->
-        <span th:if="*{pricePresaleInEur != null and priceInEur != null}">
-            &nbsp;/&nbsp;
-        </span>
-
-                                <!-- Normal price -->
-        <span th:if="*{priceInEur != null}">
-            Price: <span th:text="*{priceInEur}"></span>
-        </span>
-
+                                <!-- İkisi de varsa ayraç -->
+    <span th:if="*{pricePresaleInEur != null and priceInEur != null}">
+        &nbsp;/&nbsp;
     </span>
+
+                                <!-- Normal fiyat varsa -->
+    <span th:if="*{priceInEur != null}" th:text="|*{priceInEur} (Aan de kassa)|">
+    </span>
+</span>
+                            <p th:text="|*{venue.city} (*{venue.distanceFromPublicTransportInKm} km van de openbaar vervoer)|"> </p>
+                            <p th:text="|deuren: *{doors}|" class="mb-0 me-1 "></p>
+
                         </div>
-
-
 
 
                         <!--                        <div class="mb-2 p-1 be-white text-dark text-center border rounded" th:if="*{foodProvided}"-->
                         <!--                             th:text="'eten is voorzien'">-->
                         <!--                            &lt;!&ndash;<p class="m-2" th:text="|eten voorzien: *{foodProvided ? 'ja' : 'nee'}|"></p>&ndash;&gt;-->
                         <!--                        </div>   -->
-                        <div class="me -4 d-flex ">
-                            <p th:text="*{extraInfo}" class="mb-0 me-2 "></p>
+                        <div class="mt-2 me -4 d-flex ">
+                            <p th:text="*{extraInfo}" class="mt-2 me-2 "></p>
 
                         </div>
                     </div>

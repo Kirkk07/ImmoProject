@@ -107,6 +107,31 @@
                         <!-- <p class="m-2" th:if="*{freeParkingAvailable}" th:text="'gratis parking'"></p> -->
                     </div>
                 </div>
+
+
+
+                <div class="col-6">
+                    <h4 th:text="|Parties in *{venueName}|" class="mt-2">:</h4>
+
+                    <div class="mb-2 p-1 be-white text-dark text-center border rounded" th:each="p : ${venue.parties}" th:text="${p.name}">
+                        <div th:text="${p.name}"></div>
+
+
+                    </div>
+                    <div class="mb-2 p-1 be-white text-dark text-center border rounded" th:if="*{freeParkingAvailable}"
+                         th:text="'gratis parking'">
+                        <!--  <p class="m-2" th:text="|gratis parking: *{freeParkingAvailable ? 'ja':'nee'}|"></p> -->
+                        <!-- <p class="m-2" th:if="*{freeParkingAvailable}" th:text="'gratis parking'"></p> -->
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

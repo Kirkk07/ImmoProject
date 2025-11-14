@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Collection;
 
 @Entity
 public class Party {
@@ -18,8 +19,8 @@ public class Party {
     private LocalDate  date;
     private LocalTime doors;
     private String imageUrl;
-
-    @ManyToOne
+//PErformans icin fetch Lazy yapiyoruz cunku venueden hepsini kontrol ediyor
+    @ManyToOne(fetch = FetchType.LAZY)
     private Venue venue;
     @JoinColumn(name = "Venue_Id")
 
@@ -94,8 +95,6 @@ public class Party {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
-
 
 
 
