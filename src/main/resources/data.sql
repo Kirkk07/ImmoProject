@@ -38,6 +38,102 @@
 --         '2025-11-15', '21:00',
 --         '/img/party_sapphiresoiree.jpg');
 
+-- Immommmo
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+VALUES
+    ('3+1 Apartment Beşiktaş',
+     'Spacious apartment in city center',
+     1500,
+     'HUIS',
+     'RENTREADY',
+     3,
+     2,
+     120,
+     'Some Street 10',
+     'Istanbul',
+     TRUE,
+     TRUE,
+     '/img/P1Tekoop1.jpg');
+
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+VALUES
+    ('Luxury Villa Antalya',
+     'Sea view private villa with pool',
+     450000,
+     'HUIS',
+     'SALEREADY',
+     5,
+     3,
+     350,
+     'Palm Street 20',
+     'Antalya',
+     TRUE,
+     FALSE,
+     '/img/P1Tekoop2.jpg');
+
+
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+VALUES
+    ('Single Car Garage Rotterdam',
+     'Secure garage with automatic door',
+     25000,
+     'GARAGE',
+     'SALEREADY',
+     0,
+     0,
+     25,
+     'Garage Lane 5',
+     'Rotterdam',
+     FALSE,
+     FALSE,
+     '/img/P1Tekoop3.jpg');
+
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+VALUES
+    ('Land Plot Utrecht',
+     'Empty land suitable for agriculture',
+     80000,
+     'VELD',
+     'SALERENOVATIONNEEDED',
+     0,
+     0,
+     900,
+     'Green Field 99',
+     'Utrecht',
+     FALSE,
+     FALSE,
+     '/img/P1Tekoop1.jpg');
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+VALUES
+    ('Old Apartment Kadıköy',
+     'Needs renovation but great location',
+     90000,
+     'APARTMENT',
+     'SALERENOVATIONNEEDED',
+     2,
+     1,
+     85,
+     'Moda Street 8',
+     'Istanbul',
+     FALSE,
+     TRUE,
+     '/img/P1Tekoop1.jpg');
+
+--Immo
+
+
+
+
+
 insert into client(name,nr_of_orders,total_amount,discount_taken) values(
 'Hasan',81,730.00,10);
 insert into client(name,nr_of_orders,total_amount,discount_taken) values(
