@@ -24,9 +24,9 @@ public class Venue {
     private int distanceFromPublicTransportInKm;
     private String imageUrl;
 
+
     @OneToMany(mappedBy = "venue", fetch = FetchType.LAZY)
     private Collection<Party> parties;
-
 
 
 

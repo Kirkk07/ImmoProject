@@ -4,33 +4,48 @@ package be.thomasmore.party.model;
 
 import jakarta.persistence.*;
 
-@Entity
-public class Property {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String title;
-    private String description;
-    private Integer price;
-    private int rooms;
-    private int bathrooms;
-    private int area;
-    private String address;
-    private String city;
-    private boolean hasParking;
-    private boolean nearPublicTransport;
-    private String imageUrl;
+
+    @Entity
+    public class Property {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer id;
+        private String title;
+        private String description;
+        private Integer price;
+        private int rooms;
+        private int bathrooms;
+        private int area;
+        private String address;
+        private String city;
+        private boolean hasParking;
+        private boolean nearPublicTransport;
+        private String imageUrl;
 
 
 
-    private String postcode;
-    @Enumerated(EnumType.STRING)
-    private PropertyType propertyType;//HUIS Apartment
-    @Enumerated(EnumType.STRING)
-    private StatusType statusType; //RENT - SALE
+        private String postcode;
+        @Enumerated(EnumType.STRING)
+        private PropertyType propertyType;//HUIS Apartment
+        @Enumerated(EnumType.STRING)
+        private StatusType statusType; //RENT - SALE
 
 
-    // Getters and Setters
+        //Mant to ONe Owner Property
+        @ManyToOne(fetch = FetchType.LAZY)
+        private Owner owner;
+
+        @JoinColumn(name = "Owner_Id")
+        public Owner getOwner() {
+            return owner;
+        }
+
+        public void setOwner(Owner owner) {
+            this.owner = owner;
+        }
+
+
+        // Getters and Setters
     public StatusType getStatusType() {return statusType;}
     public void setStatusType(StatusType statusType) {this.statusType = statusType;}
     public Integer getId() { return id; }

@@ -28,53 +28,32 @@
 <!--    Old version of Venuelist-->
 
     <!--    Iterated version of Venuelist-->
-    <div class="row ">
+    <div class="row">
         <div th:each="property: ${properties}"
-            th:object="${property}"
-            class="card-group col col-12 col-sm-6 col md-4 col-lg-3 col-xl-2">
-            <div class="card m-1 p-2 text-center">
+             th:object="${property}"
+             class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex">
+            <div class="card m-1 p-2 text-center flex-fill">
                 <a th:href="@{|/propertydetails/*{id}|}" class="text-decoration-none d-block">
-
-                    <!-- Resim -->
                     <div>
-                        <img th:src="${property.imageUrl}"
-                             alt="Venue image"
-                             class="img-fluid rounded"
-                             style="max-width: 100%;">
+                        <img th:src="${property.imageUrl}" alt="Venue image" class="img-fluid rounded w-100" style="height: 200px; object-fit: cover;">
                     </div>
-                    <!-- price -->
                     <h3 th:text="|€ *{price} |" class="mb-2"></h3>
-                    <!-- Property Type -->
                     <h5 th:text="|*{propertyType}|" class="mb-2"></h5>
                     <p>
-                        <span th:if="*{rooms > 0}"
-                                th:text="|*{rooms} slp. |" class="mb-2">
-                        </span>
-                        <span th:text="|*{area} m² |" class="text-black mb-2">
-                        </span>
+                        <span th:if="*{rooms > 0}" th:text="|*{rooms} slp. |" class="mb-2"></span>
+                        <span th:text="|*{area} m² |" class="text-black mb-2"></span>
                     </p>
                     <p>
-                         <span th:text="|*{postcode} |" class="text-black mb-2">
-                        </span>
-                        <span
-                              th:text="|*{city} |" class="mb-2">
-                        </span>
-
+                        <span th:text="|*{postcode} |" class="text-black mb-2"></span>
+                        <span th:text="|*{city} |" class="mb-2"></span>
                     </p>
-                    <!-- Title -->
                     <h6 th:text="*{title}" class="text-black mb-2"></h6>
-                    <!-- City -->
-                    <h6 th:if="${property.statusType.name() == 'SALERENOVATIONNEEDED'}"
-                        th:text="'Renovate'" class="mb-2"></h6>
-
-
-
-
+                    <h6 th:if="${property.statusType.name() == 'SALERENOVATIONNEEDED'}" th:text="'Renovate'" class="mb-2"></h6>
                 </a>
             </div>
         </div>
     </div>
-</div>
+
 <!--    Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>
 <!--<p th:text="${currentUrl}"></p>-->
