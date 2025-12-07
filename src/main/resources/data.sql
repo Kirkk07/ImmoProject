@@ -40,25 +40,25 @@
 
 -- Immommmo
 INSERT INTO PROPERTY
-(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT ,POSTCODE,  IMAGE_URL)
 VALUES
     ('3+1 Apartment Beşiktaş',
      'Spacious apartment in city center',
-     1500,
+     15000,
      'HUIS',
-     'RENTREADY',
+     'SALERENOVATIONNEEDED',
      3,
      2,
      120,
      'Some Street 10',
      'Istanbul',
      TRUE,
-     TRUE,
-     '/img/P1Tekoop1.jpg');
+     TRUE,'2030',
+     'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg');
 
 
 INSERT INTO PROPERTY
-(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, IMAGE_URL)
 VALUES
     ('Luxury Villa Antalya',
      'Sea view private villa with pool',
@@ -71,13 +71,13 @@ VALUES
      'Palm Street 20',
      'Antalya',
      TRUE,
-     FALSE,
-     '/img/P1Tekoop2.jpg');
+     FALSE,'2000',
+     'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg');
 
 
 
 INSERT INTO PROPERTY
-(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, IMAGE_URL)
 VALUES
     ('Single Car Garage Rotterdam',
      'Secure garage with automatic door',
@@ -90,12 +90,12 @@ VALUES
      'Garage Lane 5',
      'Rotterdam',
      FALSE,
-     FALSE,
-     '/img/P1Tekoop3.jpg');
+     FALSE,'2660',
+     'https://images.pexels.com/photos/845599/pexels-photo-845599.jpeg');
 
 
 INSERT INTO PROPERTY
-(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT,POSTCODE, IMAGE_URL)
 VALUES
     ('Land Plot Utrecht',
      'Empty land suitable for agriculture',
@@ -108,11 +108,11 @@ VALUES
      'Green Field 99',
      'Utrecht',
      FALSE,
-     FALSE,
-     '/img/P1Tekoop1.jpg');
+     FALSE,'2020'
+     ,'https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg');
 
 INSERT INTO PROPERTY
-(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, IMAGE_URL)
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT,POSTCODE,  IMAGE_URL)
 VALUES
     ('Old Apartment Kadıköy',
      'Needs renovation but great location',
@@ -125,8 +125,173 @@ VALUES
      'Moda Street 8',
      'Istanbul',
      FALSE,
-     TRUE,
-     '/img/P1Tekoop1.jpg');
+     TRUE,'2100',
+     'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg');
+
+
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, IMAGE_URL)
+VALUES
+-- 1
+('Modern Apartment in Brussels Centre',
+ 'Renovated and bright apartment close to Grand Place',
+ 185000,
+ 'APARTMENT',
+ 'SALERENOVATIONNEEDED',
+ 2,
+ 1,
+ 78,
+ 'Rue du Midi 45',
+ 'Brussels',
+ TRUE,
+ TRUE,
+ '1000',
+ 'https://images.pexels.com/photos/259583/pexels-photo-259583.jpeg'),
+
+-- 2
+('Cozy House in Antwerp Zuid',
+ 'Charming family house in a quiet residential area',
+ 320000,
+ 'HUIS',
+ 'SALEREADY',
+ 4,
+ 2,
+ 160,
+ 'Kloosterstraat 112',
+ 'Antwerp',
+ TRUE,
+ FALSE,
+ '2000',
+ 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg'),
+
+-- 3
+('Renovation Project Apartment in Ghent',
+ 'Old apartment with investment potential near city centre',
+ 95000,
+ 'APARTMENT',
+ 'SALERENOVATIONNEEDED',
+ 2,
+ 1,
+ 82,
+ 'Korenlei 18',
+ 'Ghent',
+ FALSE,
+ TRUE,
+ '9000',
+ 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg'),
+
+-- 4
+('Luxury Penthouse in Bruges',
+ 'Top-floor penthouse with canal views and large terrace',
+ 540000,
+ 'APARTMENT',
+ 'SALERENOVATIONNEEDED',
+ 3,
+ 2,
+ 140,
+ 'Wollestraat 9',
+ 'Bruges',
+ TRUE,
+ TRUE,
+ '8000',
+ 'https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg'),
+
+-- 5
+('Budget-Friendly Apartment in Leuven',
+ 'Affordable rental apartment ideal for students',
+ 8500,
+ 'APARTMENT',
+ 'RENTREADY',
+ 1,
+ 1,
+ 48,
+ 'Tiensestraat 88',
+ 'Leuven',
+ FALSE,
+ TRUE,
+ '3000',
+ 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg'),
+
+-- 6
+('Spacious Family House in Liège',
+ 'Large renovated home close to local shops',
+ 245000,
+ 'HUIS',
+ 'SALERENOVATIONNEEDED',
+ 5,
+ 2,
+ 185,
+ 'Rue Saint-Gilles 71',
+ 'Liege',
+ TRUE,
+ FALSE,
+ '4000',
+ 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg'),
+
+-- 7
+('Studio Apartment Near Brussels EU Quarter',
+ 'Compact and modern studio perfect for young professionals',
+ 11000,
+ 'APARTMENT',
+ 'SALERENOVATIONNEEDED',
+ 1,
+ 1,
+ 39,
+ 'Rue de la Loi 102',
+ 'Brussels',
+ FALSE,
+ TRUE,
+ '1040',
+ 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg'),
+
+-- 8
+('Country House in Namur',
+ 'Quiet countryside house with large private garden',
+ 390000,
+ 'HUIS',
+ 'SALEREADY',
+ 6,
+ 3,
+ 250,
+ 'Chaussée de Charleroi 55',
+ 'Namur',
+ TRUE,
+ FALSE,
+ '5000',
+ 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg'),
+
+-- 9
+('Renovated Apartment in Antwerp Berchem',
+ 'Sunny apartment close to train station',
+ 165000,
+ 'APARTMENT',
+ 'RENTREADY',
+ 2,
+ 1,
+ 88,
+ 'Statiestraat 21',
+ 'Antwerp',
+ TRUE,
+ TRUE,
+ '2600',
+ 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg'),
+
+-- 10
+('Bright Apartment in Ghent Waterside',
+ 'Open-plan living with water view, recently renovated',
+ 210000,
+ 'APARTMENT',
+ 'RENTREADY',
+ 3,
+ 1,
+ 102,
+ 'Oude Vestingstraat 6',
+ 'Ghent',
+ TRUE,
+ TRUE,
+ '9000',
+ 'https://images.pexels.com/photos/259559/pexels-photo-259559.jpeg');
 
 --Immo
 

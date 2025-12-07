@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,7 @@ public class PropertyController {
 
     private final PropertyRepository propertyRepository;
     private Logger logger = LoggerFactory.getLogger(PropertyRepository.class);
+    Property property;
 
     public PropertyController(PropertyRepository propertyRepository) {
         this.propertyRepository = propertyRepository;
@@ -35,6 +37,10 @@ public class PropertyController {
         model.addAttribute("properties", properties);
         long propertyCount = propertyRepository.count();
         model.addAttribute("propertyCount", propertyCount);
+
+
+
+
         return "propertylist";
     }
 

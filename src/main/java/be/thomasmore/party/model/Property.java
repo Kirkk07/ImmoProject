@@ -11,15 +11,19 @@ public class Property {
     private Integer id;
     private String title;
     private String description;
-    private Double price;
+    private Integer price;
     private int rooms;
     private int bathrooms;
-    private double area;
+    private int area;
     private String address;
     private String city;
     private boolean hasParking;
     private boolean nearPublicTransport;
     private String imageUrl;
+
+
+
+    private String postcode;
     @Enumerated(EnumType.STRING)
     private PropertyType propertyType;//HUIS Apartment
     @Enumerated(EnumType.STRING)
@@ -35,14 +39,14 @@ public class Property {
     public void setTitle(String title) { this.title = title; }
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }
-    public Double getPrice() { return price; }
-    public void setPrice(Double price) { this.price = price; }
+    public Integer getPrice() { return price; }
+    public void setPrice(Integer price) { this.price = price; }
     public int getRooms() { return rooms; }
     public void setRooms(int rooms) { this.rooms = rooms; }
     public int getBathrooms() { return bathrooms; }
     public void setBathrooms(int bathrooms) { this.bathrooms = bathrooms; }
-    public double getArea() { return area; }
-    public void setArea(double area) { this.area = area; }
+    public int getArea() { return area; }
+    public void setArea(int area) { this.area = area; }
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
     public String getCity() { return city; }
@@ -55,6 +59,8 @@ public class Property {
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
     public PropertyType getPropertyType() {return propertyType;}
     public void setPropertyType(PropertyType propertyType) {this.propertyType = propertyType;}
+    public String getPostcode() {return postcode;}
+    public void setPostcode(String postcode) {this.postcode = postcode;}
 
 }
 

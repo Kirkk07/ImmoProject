@@ -9,27 +9,7 @@
 <body>
 <!-- Navbar -->
 <div th:replace="~{fragments/header :: navbar}"/>
-<!--<header>-->
-<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">-->
-<!--        <div class="container-fluid">-->
 
-<!--            <button class="navbar-toggler light p-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                <span class="navbar-toggler-icon light"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--                <div class="navbar-nav p-3">-->
-<!--                    <a class="navbar-brand text-warning" th:href="@{home}">Lets Party!</a>-->
-<!--                    <a class="nav-link text-white " th:href="@{home}">Home</a>-->
-<!--                    <a class="nav-link  text-white active" th:href="@{venuedetails}">zaaldetails</a>-->
-<!--                    <a class="nav-link text-white active" th:href="@{about}">About</a>-->
-<!--                    <a class="nav-link text-white active" th:href="@{venueList}">VenueList</a>-->
-
-
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </nav>-->
-<!--</header >-->
 <div class="container">
     <h1> Properties</h1>
     <div class=" d-flex align-items-center justify-content-between mb-3 col-12">
@@ -47,12 +27,6 @@
     </div>
 <!--    Old version of Venuelist-->
 
-<!--<div class="">-->
-<!--    <a th:href="@{/venuedetails/1}" class="btn btn-primary m-3">/1</a>-->
-<!--    <a th:href="@{/venuedetails/2}" class="btn btn-primary m-3">/2</a>-->
-<!--    <a th:href="@{/venuedetails/3}" class="btn btn-primary m-3">/3</a>-->
-
-<!--</div>-->
     <!--    Iterated version of Venuelist-->
     <div class="row ">
         <div th:each="property: ${properties}"
@@ -68,13 +42,32 @@
                              class="img-fluid rounded"
                              style="max-width: 100%;">
                     </div>
-                    <!-- Başlık -->
-                    <h3 th:text="*{title}" class="text-black mb-2"></h3>
-
                     <!-- price -->
-                    <h6 th:text="|*{price} Euro|" class="mb-2"></h6>
+                    <h3 th:text="|€ *{price} |" class="mb-2"></h3>
                     <!-- Property Type -->
-                    <h6 th:text="|*{propertyType} Te Koop|" class="mb-2"></h6>
+                    <h5 th:text="|*{propertyType}|" class="mb-2"></h5>
+                    <p>
+                        <span th:if="*{rooms > 0}"
+                                th:text="|*{rooms} slp. |" class="mb-2">
+                        </span>
+                        <span th:text="|*{area} m² |" class="text-black mb-2">
+                        </span>
+                    </p>
+                    <p>
+                         <span th:text="|*{postcode} |" class="text-black mb-2">
+                        </span>
+                        <span
+                              th:text="|*{city} |" class="mb-2">
+                        </span>
+
+                    </p>
+                    <!-- Title -->
+                    <h6 th:text="*{title}" class="text-black mb-2"></h6>
+                    <!-- City -->
+                    <h6 th:if="${property.statusType.name() == 'SALERENOVATIONNEEDED'}"
+                        th:text="'Renovate'" class="mb-2"></h6>
+
+
 
 
                 </a>
