@@ -32,6 +32,19 @@
 <!--</header >-->
 <div class="container">
     <h1> Properties</h1>
+    <div class=" d-flex align-items-center justify-content-between mb-3 col-12">
+        <p class="mb-0">Er zijn in totaal <b th:text="${propertyCount}">0</b> properties.</p>
+        <form th:action="@{/propertylist}" method="get" class="d-flex align-items-center gap-2 w-25">
+            <input type="text"
+                   class="form-control"
+                   placeholder="Zoek"
+                   aria-label="search"
+                   name="city"
+                   th:value="${param.city}">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+
+        </form>
+    </div>
 <!--    Old version of Venuelist-->
 
 <!--<div class="">-->

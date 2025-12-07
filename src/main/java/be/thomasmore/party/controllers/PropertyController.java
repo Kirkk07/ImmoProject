@@ -5,6 +5,8 @@ package be.thomasmore.party.controllers;
 //Immo
 import be.thomasmore.party.model.Property;
 import be.thomasmore.party.repositories.PropertyRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import java.util.Optional;
 public class PropertyController {
 
     private final PropertyRepository propertyRepository;
+    private Logger logger = LoggerFactory.getLogger(PropertyRepository.class);
 
     public PropertyController(PropertyRepository propertyRepository) {
         this.propertyRepository = propertyRepository;
@@ -28,7 +31,10 @@ public class PropertyController {
                                @RequestParam(required = false) Double maxPrice,
                                @RequestParam(required = false) String city) {
         List<Property> properties = propertyRepository.findByFilter(type, minPrice, maxPrice, city);
+        logger.info(String.format("PropertyList: type=%s, minPrice=%s, maxPrice=%s, city=%s", type, minPrice, maxPrice, city));
         model.addAttribute("properties", properties);
+        long propertyCount = propertyRepository.count();
+        model.addAttribute("propertyCount", propertyCount);
         return "propertylist";
     }
 

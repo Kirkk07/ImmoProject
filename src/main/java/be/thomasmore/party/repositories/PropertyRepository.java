@@ -8,8 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface PropertyRepository extends CrudRepository<Property, Integer> {
-    @Query("SELECT p FROM Property p WHERE " +
-            "(:type IS NULL OR p.propertyType = :type) AND " +
+    @Query("SELECT p FROM Property p"   +
+           " WHERE (:type IS NULL OR p.propertyType = :type) AND " +
             "(:minPrice IS NULL OR p.price >= :minPrice) AND " +
             "(:maxPrice IS NULL OR p.price <= :maxPrice) AND " +
             "(:city IS NULL OR p.city IS NULL OR LOWER(p.city) LIKE LOWER(CONCAT('%', :city, '%')))")
