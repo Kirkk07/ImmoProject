@@ -38,9 +38,6 @@ public class PropertyController {
         long propertyCount = propertyRepository.count();
         model.addAttribute("propertyCount", propertyCount);
 
-
-
-
         return "propertylist";
     }
 
