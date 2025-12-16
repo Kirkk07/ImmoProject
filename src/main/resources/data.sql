@@ -7,11 +7,9 @@
 --         '2025-10-10', '10:00',
 --         '/img/party_spring.jpg');
 --
--- INSERT INTO PARTY
--- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
--- VALUES ('Liberty 2025', null, 6, 'free vestiaire, viplounge',
---         '2025-10-25', '22:00',
---         '/img/party_liberty.jpg');
+INSERT INTO BEDRIJF
+(name)
+VALUES ('HEYLEN');
 --
 -- INSERT INTO PARTY
 -- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)

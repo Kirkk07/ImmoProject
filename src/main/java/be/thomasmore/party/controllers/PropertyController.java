@@ -4,6 +4,8 @@ package be.thomasmore.party.controllers;
 
 //Immo
 import be.thomasmore.party.model.Property;
+import be.thomasmore.party.model.PropertyType;
+import be.thomasmore.party.model.StatusType;
 import be.thomasmore.party.repositories.PropertyRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,6 +56,47 @@ public class PropertyController {
         }
         return "propertydetails";
     }
+
+    // TE HUUR olanlar
+    @GetMapping("/propertylisttehuur")
+    public String listTeHuur(Model model) {
+        List<Property> properties =
+                propertyRepository.findByStatusType(StatusType.RENTREADY);
+        long propertyCount = properties.size();
+        model.addAttribute("properties", properties);
+        model.addAttribute("propertyCount", propertyCount);
+        return "propertylisttehuur"; // tehhuur.html
+    }
+
+    // TE KOOP olanlar
+    @GetMapping("/propertylisttekoop")
+
+    public String listTeKoop(
+            @RequestParam(required = false) Boolean includeRenovation,
+            Model model) {
+
+        List<Property> properties;
+
+        if (Boolean.TRUE.equals(includeRenovation)) {
+            // Checkbox işaretlendi → SALEREADY + SALERENOVATIONNEEDED
+            properties = new ArrayList<>(propertyRepository.findByStatusType(StatusType.SALEREADY));
+            properties.addAll(propertyRepository.findByStatusType(StatusType.SALERENOVATIONNEEDED));
+        } else {
+            // Checkbox işaretlenmedi → sadece SALEREADY
+            properties = propertyRepository.findByStatusType(StatusType.SALEREADY);
+        }
+
+        long propertyCount = properties.size();
+        model.addAttribute("properties", properties);
+        model.addAttribute("propertyCount", propertyCount);
+        model.addAttribute("includeRenovation", includeRenovation); // checkbox'ın sayfada seçili kalması için
+
+        return "propertylisttekoop";
+    }
+
+
+
+
 }
 
 
