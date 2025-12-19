@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: navbar}"/>
+
+<main class="m-5" th:object="${bedrijf}" th:if="${bedrijf}">
+
+    <div>
+        <h1 class="text-center name" th:text="*{name}"></h1>
+    </div>
+
+    <div class="row">
+        <div class="col text-start">
+            <a th:href="@{|/bedrijfdetails/${prevId}|}" class="btn btn-outline-primary">
+                &lt;
+            </a>
+        </div>
+
+        <div class="col text-end">
+            <a th:href="@{|/bedrijfdetails/${nextId}|}" class="btn btn-outline-primary">
+                &gt;
+            </a>
+        </div>
+    </div>
+
+<!--    <h3 class=" venueName d-flex justify-content-center align-items-center p-3 " > <span  th:text="|*{date} in |"> </span>-->
+<!--        <a th:href="@{/venuedetails/{id}(id=*{venue.id})}" th:text=" *{venue.venueName}"></a></h3>-->
+
+
+<!--    <div class="container mt-4 ">-->
+<!--        <div class="row align-items-start ">-->
+<!--            &lt;!&ndash; Sag taraf: büyük resim &ndash;&gt;-->
+
+
+<!--            &lt;!&ndash; Sağ taraf: link ve sütunlar &ndash;&gt;-->
+<!--            <div class="col-md-6">-->
+
+<!--                <div class="row">-->
+<!--                    &lt;!&ndash; 1. sütun &ndash;&gt;-->
+<!--                    <div class="col-6 bg-light">-->
+<!--                        <div>-->
+<!--                            &lt;!&ndash; 1️⃣ Eğer her iki fiyat da yoksa &ndash;&gt;-->
+<!--                            <span th:if="*{priceInEur == null and pricePresaleInEur == null}">-->
+<!--    Gratis Party-->
+<!--</span>-->
+
+<!--                            &lt;!&ndash; 2️⃣ Eğer en az bir fiyat varsa &ndash;&gt;-->
+<!--                            <span th:if="*{priceInEur != null or pricePresaleInEur != null}">-->
+
+<!--    &lt;!&ndash; Presale varsa &ndash;&gt;-->
+<!--    <span th:if="*{pricePresaleInEur != null}" th:text="|*{pricePresaleInEur} (Voorverkoop)|">-->
+<!--    </span>-->
+
+<!--                                &lt;!&ndash; İkisi de varsa ayraç &ndash;&gt;-->
+<!--    <span th:if="*{pricePresaleInEur != null and priceInEur != null}">-->
+<!--        &nbsp;/&nbsp;-->
+<!--    </span>-->
+
+<!--                                &lt;!&ndash; Normal fiyat varsa &ndash;&gt;-->
+<!--    <span th:if="*{priceInEur != null}" th:text="|*{priceInEur} (Aan de kassa)|">-->
+<!--    </span>-->
+<!--</span>-->
+<!--                            <p th:text="|*{venue.city} (*{venue.distanceFromPublicTransportInKm} km van de openbaar vervoer)|"> </p>-->
+<!--                            <p th:text="|deuren: *{doors}|" class="mb-0 me-1 "></p>-->
+
+                        </div>
+
+
+                        <!--                        <div class="mb-2 p-1 be-white text-dark text-center border rounded" th:if="*{foodProvided}"-->
+                        <!--                             th:text="'eten is voorzien'">-->
+                        <!--                            &lt;!&ndash;<p class="m-2" th:text="|eten voorzien: *{foodProvided ? 'ja' : 'nee'}|"></p>&ndash;&gt;-->
+                        <!--                        </div>   -->
+<!--                        <div class="mt-2 me -4 d-flex ">-->
+<!--                            <p th:text="*{extraInfo}" class="mt-2 me-2 "></p>-->
+
+<!--                        </div>-->
+                    </div>
+                    <div class="col-md-6">
+                        <img th:src="${bedrijf.imageUrl}"
+                             alt="Venue image"
+                             class="img-fluid rounded "
+                             style="width: 100%; max-width: 500px;">
+                    </div>
+                </div>
+
+
+                <!-- 2. sütun -->
+                <!--                <div class="col-6">-->
+                <!--                    <div class="mb-2 p-1 be-white text-dark text-center border rounded">-->
+                <!--                        <p class="m-2" th:text="|*{distanceFromPublicTransportInKm}km van openbaar vervoer|"></p>-->
+                <!--                    </div>-->
+                <!--                    <div class="mb-2 p-1 be-white text-dark text-center border rounded">-->
+                <!--                        <p class="m-2" th:if="*{indoor} and *{outdoor}" th:text="'binnen && buiten'"></p>-->
+                <!--                        <p class="m-2" th:if="*{indoor} and !*{outdoor}" th:text="'binnen'"></p>-->
+                <!--                        <p class="m-2" th:if="!*{indoor} and *{outdoor}" th:text="'buiten'"></p>-->
+                <!--                        &lt;!&ndash;                            <p class="m-2" th:text="|binnen: *{indoor ? 'ja' : 'nee'}|"></p>&ndash;&gt;-->
+                <!--                        &lt;!&ndash;<p class="m-2" th:if="*{outdoor}" th:text="'binnen"></p>&ndash;&gt;-->
+                <!--                        &lt;!&ndash;<p class="m-2" th:text="|buiten: *{outdoor ? 'ja':'nee'}|"></p>&ndash;&gt;-->
+                <!--                        &lt;!&ndash;<p class="m-2" th:text="|buiten: *{outdoor ? 'ja':'nee'}|"></p>&ndash;&gt;-->
+                <!--                    </div>-->
+                <!--                    <div class="mb-2 p-1 be-white text-dark text-center border rounded" th:if="*{freeParkingAvailable}"-->
+                <!--                         th:text="'gratis parking'">-->
+                <!--                        &lt;!&ndash;  <p class="m-2" th:text="|gratis parking: *{freeParkingAvailable ? 'ja':'nee'}|"></p> &ndash;&gt;-->
+                <!--                        &lt;!&ndash; <p class="m-2" th:if="*{freeParkingAvailable}" th:text="'gratis parking'"></p> &ndash;&gt;-->
+                <!--                    </div>-->
+                <!--                </div>-->
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<!--Footer-->
+<div th:replace=" ~{fragments/footer :: footer}"/>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
