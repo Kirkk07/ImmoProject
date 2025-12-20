@@ -38,13 +38,12 @@ VALUES ('HEYLEN');
 
 -- Immommmo
 INSERT INTO PROPERTY
-(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, STATUS_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,OWNER_ID, IMAGE_URL)
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
 VALUES
     ('3+1 Apartment Beşiktaş',
      'Spacious apartment in city center',
      15000,
      'HUIS',
-     'SALERENOVATIONNEEDED',
      3,
      2,
      120,
@@ -52,16 +51,15 @@ VALUES
      'Istanbul',
      TRUE,
      TRUE,
-     '2030',
-     (SELECT id FROM OWNER WHERE username = 'Lucas Peeters')
-     ,
+     '2030','RENT',null,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
+
      'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg'),
 
     ('Luxury Villa Antalya',
      'Sea view private villa with pool',
      450000,
      'HUIS',
-     'SALEREADY',
      5,
      3,
      350,
@@ -69,14 +67,14 @@ VALUES
      'Antalya',
      TRUE,
      FALSE,
-     '2000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+     '2000','RENT',null,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
      'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg'),
 
     ('Single Car Garage Rotterdam',
      'Secure garage with automatic door',
      25000,
      'GARAGE',
-     'SALEREADY',
      0,
      0,
      25,
@@ -84,14 +82,14 @@ VALUES
      'Rotterdam',
      FALSE,
      FALSE,
-     '2660',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+     '2660','SELL',TRUE,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
      'https://images.pexels.com/photos/845599/pexels-photo-845599.jpeg'),
 
     ('Land Plot Utrecht',
      'Empty land suitable for agriculture',
      80000,
      'VELD',
-     'SALERENOVATIONNEEDED',
      0,
      0,
      900,
@@ -99,14 +97,14 @@ VALUES
      'Utrecht',
      FALSE,
      FALSE,
-     '2020',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+     '2020','SELL',null,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
      'https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg'),
 
     ('Old Apartment Kadıköy',
      'Needs renovation but great location',
      90000,
      'APARTMENT',
-     'SALERENOVATIONNEEDED',
      2,
      1,
      85,
@@ -114,7 +112,8 @@ VALUES
      'Istanbul',
      FALSE,
      TRUE,
-     '2100',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+     '2100','SELL',TRUE,
+             (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
      'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg'),
 
 -- 1
@@ -122,7 +121,6 @@ VALUES
  'Renovated and bright apartment close to Grand Place',
  185000,
  'APARTMENT',
- 'SALERENOVATIONNEEDED',
  2,
  1,
  78,
@@ -130,7 +128,8 @@ VALUES
  'Brussels',
  TRUE,
  TRUE,
- '1000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '1000','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/259583/pexels-photo-259583.jpeg'),
 
 -- 2
@@ -138,7 +137,6 @@ VALUES
  'Charming family house in a quiet residential area',
  320000,
  'HUIS',
- 'SALEREADY',
  4,
  2,
  160,
@@ -146,7 +144,8 @@ VALUES
  'Antwerp',
  TRUE,
  FALSE,
- '2000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '2000','RENT',TRUE,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg'),
 
 -- 3
@@ -154,7 +153,6 @@ VALUES
  'Old apartment with investment potential near city centre',
  95000,
  'APARTMENT',
- 'SALERENOVATIONNEEDED',
  2,
  1,
  82,
@@ -162,7 +160,8 @@ VALUES
  'Ghent',
  FALSE,
  TRUE,
- '9000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '9000','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg'),
 
 -- 4
@@ -170,7 +169,6 @@ VALUES
  'Top-floor penthouse with canal views and large terrace',
  540000,
  'APARTMENT',
- 'SALERENOVATIONNEEDED',
  3,
  2,
  140,
@@ -178,7 +176,8 @@ VALUES
  'Bruges',
  TRUE,
  TRUE,
- '8000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '8000','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg'),
 
 -- 5
@@ -186,7 +185,6 @@ VALUES
  'Affordable rental apartment ideal for students',
  8500,
  'APARTMENT',
- 'RENTREADY',
  1,
  1,
  48,
@@ -194,7 +192,8 @@ VALUES
  'Leuven',
  FALSE,
  TRUE,
- '3000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '3000','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg'),
 
 -- 6
@@ -202,7 +201,6 @@ VALUES
  'Large renovated home close to local shops',
  245000,
  'HUIS',
- 'SALERENOVATIONNEEDED',
  5,
  2,
  185,
@@ -210,7 +208,8 @@ VALUES
  'Liege',
  TRUE,
  FALSE,
- '4000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '4000','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg'),
 
 -- 7
@@ -218,7 +217,6 @@ VALUES
  'Compact and modern studio perfect for young professionals',
  11000,
  'APARTMENT',
- 'SALERENOVATIONNEEDED',
  1,
  1,
  39,
@@ -226,7 +224,8 @@ VALUES
  'Brussels',
  FALSE,
  TRUE,
- '1040',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '1040','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg'),
 
 -- 8
@@ -234,7 +233,6 @@ VALUES
  'Quiet countryside house with large private garden',
  390000,
  'HUIS',
- 'SALEREADY',
  6,
  3,
  250,
@@ -242,7 +240,8 @@ VALUES
  'Namur',
  TRUE,
  FALSE,
- '5000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '5000','SALE',FALSE,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg'),
 
 -- 9
@@ -250,7 +249,6 @@ VALUES
  'Sunny apartment close to train station',
  165000,
  'APARTMENT',
- 'RENTREADY',
  2,
  1,
  88,
@@ -258,7 +256,8 @@ VALUES
  'Antwerp',
  TRUE,
  TRUE,
- '2600',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '2600','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg'),
 
 -- 10
@@ -266,7 +265,6 @@ VALUES
  'Open-plan living with water view, recently renovated',
  210000,
  'APARTMENT',
- 'RENTREADY',
  3,
  1,
  102,
@@ -274,7 +272,8 @@ VALUES
  'Ghent',
  TRUE,
  TRUE,
- '9000',(SELECT id FROM OWNER WHERE username = 'Lucas Peeters'),
+ '9000','RENT',null,
+ (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
  'https://images.pexels.com/photos/259559/pexels-photo-259559.jpeg');
 
 --Immo
@@ -282,7 +281,7 @@ VALUES
 
 -- User/ Owner
 
-INSERT INTO OWNER (username, email, phone_number, company, user_type) VALUES
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES
                                                                          ('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'Peeters Real Estate', 'MAKELAAR'),
                                                                          ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'Janssens Homes', 'MAKELAAR'),
                                                                          ('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'Vermeulen Properties', 'MAKELAAR'),

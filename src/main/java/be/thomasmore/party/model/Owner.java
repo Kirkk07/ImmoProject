@@ -10,13 +10,39 @@ public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String username;
+    private String ownerName;
     private String email;
     private String phoneNumber;
-    private String Company;
+    private String company;
+    private String ownerType;
 
-    @Enumerated(EnumType.STRING)
-    private UserType userType;
+    public String getOwnerType() {
+        return ownerType;
+    }
+
+    public void setOwnerType(String ownerType) {
+        this.ownerType = ownerType;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public Collection<Property> getProperties() {
+        return properties;
+    }
+
+    public void setProperties(Collection<Property> properties) {
+        this.properties = properties;
+    }
+
+
+
+
 
 
     //    // One user can have many properties
@@ -27,8 +53,7 @@ public class Owner {
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
-    public String getUsername() { return username; }
-    public void setUsername(String username) { this.username = username; }
+
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
@@ -42,11 +67,11 @@ public class Owner {
     }
 
     public String getCompany() {
-        return Company;
+        return company;
     }
 
     public void setCompany(String company) {
-        Company = company;
+        this.company = company;
     }
 
 //    public List<Property> getProperties() { return properties; }
