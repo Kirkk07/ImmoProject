@@ -1,8 +1,7 @@
 package be.thomasmore.party.repositories;//Immooo
 
 import be.thomasmore.party.model.Property;
-import be.thomasmore.party.model.PropertyType;
-import be.thomasmore.party.model.StatusType;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -20,7 +19,7 @@ public interface PropertyRepository extends CrudRepository<Property, Integer> {
                                 @Param("minPrice") Double minPrice,
                                 @Param("maxPrice") Double maxPrice,
                                 @Param("city") String city);
-    List<Property> findByStatusType(StatusType statusType);
+    List<Property> findByStatusType(Property statusType);
 
 
 }

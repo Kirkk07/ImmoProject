@@ -21,21 +21,19 @@ import jakarta.persistence.*;
         private boolean hasParking;
         private boolean nearPublicTransport;
         private String imageUrl;
-
-
-
         private String postcode;
-        @Enumerated(EnumType.STRING)
-        private PropertyType propertyType;//HUIS Apartment
-        @Enumerated(EnumType.STRING)
-        private StatusType statusType; //RENT - SALE
-
+        private String propertyType;//HUIS Apartment/Bouwland
+        private String statusType; //RENT - SALE - SALE
+        private Boolean renovationNeeded;
+       // private  String ownerName;
 
         //Mant to ONe Owner Property
-        @ManyToOne(fetch = FetchType.LAZY)
+        @ManyToOne
+        @JoinColumn(name = "owner_id")
         private Owner owner;
 
-        @JoinColumn(name = "Owner_Id")
+
+
         public Owner getOwner() {
             return owner;
         }
@@ -46,8 +44,12 @@ import jakarta.persistence.*;
 
 
         // Getters and Setters
-    public StatusType getStatusType() {return statusType;}
-    public void setStatusType(StatusType statusType) {this.statusType = statusType;}
+        public Boolean getRenovationNeeded() {return renovationNeeded;}
+        public void setRenovationNeeded(Boolean renovationNeeded) {this.renovationNeeded = renovationNeeded;}
+
+    public String getStatusType() {return statusType;}
+
+    public void setStatusType(String statusType) {this.statusType = statusType;}
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getTitle() { return title; }
@@ -72,8 +74,8 @@ import jakarta.persistence.*;
     public void setNearPublicTransport(boolean nearPublicTransport) { this.nearPublicTransport = nearPublicTransport; }
     public String getImageUrl() { return imageUrl; }
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
-    public PropertyType getPropertyType() {return propertyType;}
-    public void setPropertyType(PropertyType propertyType) {this.propertyType = propertyType;}
+    public String getPropertyType() {return propertyType;}
+    public void setPropertyType(String propertyType) {this.propertyType = propertyType;}
     public String getPostcode() {return postcode;}
     public void setPostcode(String postcode) {this.postcode = postcode;}
 
