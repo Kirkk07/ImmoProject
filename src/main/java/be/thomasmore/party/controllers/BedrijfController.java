@@ -1,9 +1,7 @@
 package be.thomasmore.party.controllers;
 
-import be.thomasmore.party.model.Artist;
 import be.thomasmore.party.model.Bedrijf;
 
-import be.thomasmore.party.model.Property;
 import be.thomasmore.party.repositories.BedrijfRepository;
 import be.thomasmore.party.repositories.PropertyRepository;
 import org.slf4j.Logger;

@@ -1,7 +1,5 @@
 package be.thomasmore.party.controllers;
 
-import be.thomasmore.party.model.Artist;
-import be.thomasmore.party.repositories.ArtistRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +8,6 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Optional;
 
 
 @Controller
@@ -22,31 +19,6 @@ public class HomeController {
         return "home";
 
 
-    }
-    @GetMapping ("/about")
-    public String about(Model model) {
-        String myName = "Hasan";
-        String myStreet= "Hof van Tichelen";
-        String myCity = "Antwerpen";
-        model.addAttribute("myName", myName);
-        model.addAttribute("myStreet", myStreet);
-        model.addAttribute("myCity", myCity);
-        return "about";
-    }
-
-    @GetMapping ("/pay")
-    public String pay(Model model){
-        LocalDate now = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String formattedNow = now.format(formatter);
-
-        LocalDateTime payDate = LocalDateTime.now().plusDays(30);
-        String formattedDate = payDate.format(formatter);
-        model.addAttribute("payDate", formattedDate);
-        model.addAttribute("now", formattedNow);
-        model.addAttribute("isWeekend", now.getDayOfWeek() == DayOfWeek.SATURDAY.plus(2)|| now.getDayOfWeek() == DayOfWeek.SUNDAY);
-
-        return "pay";
     }
 
 }

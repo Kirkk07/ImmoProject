@@ -326,51 +326,11 @@ INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES(
 
 
 
--- CLIENT
-INSERT INTO client(name, nr_of_orders, total_amount, discount_taken) VALUES
-                                                                         ('Hasan', 81, 730.00, 10),
-                                                                         ('Ihsan', 8, 230.00, 123);
+
 
 -- ARTIST
-INSERT INTO ARTIST (ARTIST_NAME, BIO, GENRE, LINK_MORE_INFO, PORTFOLIO, IMAGE_URL) VALUES
-                                                                                       ('Discobaar a moeder',
-                                                                                        'Discobaar A Moeder, een ondertussen legendarisch Antwerps fenomeen, draait al mee van in 2002. Het begon als een cafégrap van twee bevriende vinylfreaks, de grap houden ze er in, van draaien in een café genieten ze nog steeds, maar van een groots festival op z''n tijd zijn ze niet vies.',
-                                                                                        'Pop, Soul, Disco', 'http://www.discobaaramoeder.be/', 'Lotto Arena 6/03/2020', '/img/artist_disobaramoeder.jpg'),
-                                                                                       ('Radio Botanique',
-                                                                                        'Radio Botanique: helemaal geen radio. Eigenlijk gewoon een discobaar. Vaste Parkpop (Mechelen) dansers en swingers.',
-                                                                                        'voor de lol', 'https://www.facebook.com/radiobotanique/', 'bekend van Parkpop', '/img/artist_radiobotanique.jpg'),
-                                                                                       ('DJ Koen',
-                                                                                        'Als allround DJ draai ik o.a. genres als de 90s, top 40, feest- en clubmuziek. Wekelijks draai ik op o.a. studentenfeesten, bruiloften, in kroegen, clubs en meer.',
-                                                                                        '90s, top 40, feest- en clubmuziek', 'https://www.facebook.com/DJKoenMossink/', '', '/img/artist_djkoen.jpg'),
-                                                                                       ('C-Man',
-                                                                                        '- 2nd place MNM Start To DJ 2016 - - Versuz - - Carré - - Sunrise Festival - - Ikon (Noxx) - - La Rocca - ... His First single ''Nothing is forever'' came out on 2Dutch (A music label from the Netherlands) in the summer of 2018.',
-                                                                                        'deephouse, EDM', 'https://www.facebook.com/cmandj/', 'Q-hotspot 17/07/2020', '/img/artist_cman.jpg'),
-                                                                                       ('Robbe Roels',
-                                                                                        'Wie Mechelen zegt zegt Robbe Roels, waar de 20-jarige dj 3 jaar geleden begon op kleine privé feestjes en gelegenheden draait hij nu elk weekend op de grootste fuiven in zijn regio. Al blijft het daar echter niet bij, andere studentensteden zoals o.a. Leuven maar evengoed de Normandische kust zijn al getroffen door zijn prestaties.',
-                                                                                        'Allround, Dance, Techno', 'https://vi.be/platform/robberoels', 'Shake That Asspi 2020', '/img/artist_robberoels.jpg'),
-                                                                                       ('Toloko',
-                                                                                        'My name is Stan, also known as Toloko, the DJ who adds the right amount of loco-ness to your party! I am an upcoming DJ talent in the region of Zemst, Belgium. I started my career behind the turntables at the age of 20 at local parties. Entertaining the crowd and making people dance to my music, makes me happy. Every gig, I bring my party people a new and customized set and I introduce them to the latest tracks.',
-                                                                                        'house, r&b', 'https://www.toloko.be/', '', '/img/artist_toloko.jpg'),
-                                                                                       ('Tough Titty',
-                                                                                        'A Belgian Tribute to 80''s Glam and Heavy Metal',
-                                                                                        '', 'https://www.facebook.com/Tough-Titty-277601302444865', '', '/img/artist_toughtitty.jpg'),
-                                                                                       ('Kryptonight',
-                                                                                        'Twee kerels die er al vijf jaar van houden om het publiek uit hun dak te zien gaan! Onze missie: Het leven is een feest en daar moet gedanst worden. Hoe doen we dat? Met onze Latin-, Dancehall- en een vleugje Commercialplaten voor alle leeftijden zorgen we voor ieder wat wils.',
-                                                                                        'Moombahton • Dancehall • Commercial', 'https://vi.be/platform/kryptonight', 'SOME GIG''s: Tomorrowland''s Dreamville, MnM Start to Dj Finalist Flowtrack Summer Camp Casa Blanca Festival Sunrise Festival Red ''n Blue Café Local Noxx Publik Vice Festival KdG TD ...', '/img/artist_kryptonight.jpg');
 
 -- VENUE
-INSERT INTO VENUE (VENUE_NAME, LINK_MORE_INFO, CAPACITY, FOOD_PROVIDED, INDOOR, OUTDOOR, FREE_PARKING_AVAILABLE, CITY, DISTANCE_FROM_PUBLIC_TRANSPORT_IN_KM, IMAGE_URL) VALUES
-                                                                                                                                                                            ('De Club', 'https://transitm.mechelen.be/de-club', 150, false, true, false, false, 'Mechelen', 2, '/img/venue_club.jpg'),
-                                                                                                                                                                            ('De Loods', 'https://transitm.mechelen.be/de-loods', 1000, false, true, false, true, 'Mechelen', 2, '/img/venue_deloods.jpg'),
-                                                                                                                                                                            ('Zapoi', 'https://www.facebook.com/KafeeZapoi/', 150, true, true, false, false, 'Mechelen', 4, '/img/venue_zapoi.jpg'),
-                                                                                                                                                                            ('De Kuub', 'http://www.dekuub.be', 150, true, true, true, false, 'Mechelen', 4, '/img/venue_dekuub.jpg'),
-                                                                                                                                                                            ('t''Ile Maline', 'https://www.tilemalines.be', 400, true, true, true, false, 'Mechelen', 6, '/img/venue_tilemalines.jpg'),
-                                                                                                                                                                            ('Nekkerhal', 'https://www.nekkerhalbrusselsnorth.com/organiseer/hal/', 8800, false, true, false, true, 'Mechelen', 4, '/img/venue_nekkerhal.jpg'),
-                                                                                                                                                                            ('Nekkerbox', 'https://www.nekkerhalbrusselsnorth.com/organiseer/nekkerbox/', 2500, false, true, false, true, 'Mechelen', 4, '/img/venue_nekkerbox.jpg'),
-                                                                                                                                                                            ('Lamot', 'http://lamot-mechelen.be/', 300, true, true, true, false, 'Mechelen', 3, '/img/venue_lamot.jpg'),
-                                                                                                                                                                            ('Passade', 'https://www.passade.be/nl/feestzaal-mechelen', 150, true, true, true, true, 'Mechelen', 2, '/img/venue_passade.jpg'),
-                                                                                                                                                                            ('Tivoli', 'https://www.kasteeltivoli.be/locatie', 500, true, true, true, true, 'Mechelen', 8, '/img/venue_tivoli.jpg'),
-                                                                                                                                                                            ('Kruidtuin', 'https://www.mechelen.be/kruidtuin', 500, false, false, true, false, 'Mechelen', 1, '/img/venue_kruidtuin.jpg');
 
 -- -- ALBUM
 -- INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock) VALUES
@@ -387,14 +347,7 @@ INSERT INTO VENUE (VENUE_NAME, LINK_MORE_INFO, CAPACITY, FOOD_PROVIDED, INDOOR, 
 --                                                                                               ('DAMN.', 'Kendrick Lamar', 2017, 'Hip-Hop', 'Top Dawg Entertainment', 15.99, 100),
 --                                                                                               ('AM', 'Arctic Monkeys', 2013, 'Indie Rock', 'Domino Recording Company', 13.49, 130);
 
--- PARTY
-INSERT INTO PARTY (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url) VALUES
-                                                                                                               ('Big Spring Party', 6, 10, '1 cocktail included', '2025-10-10', '10:00', (SELECT id FROM VENUE WHERE venue_name = 'De Club'), '/img/party_spring.jpg'),
-                                                                                                               ('Liberty 2025', NULL, 6, 'free vestiaire, viplounge', '2025-10-25', '22:00', (SELECT id FROM VENUE WHERE venue_name = 'De Loods'), '/img/party_liberty.jpg'),
-                                                                                                               ('Uppercuts', NULL, NULL, ' ', '2025-11-01', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'), '/img/party_uppercuts.jpg'),
-                                                                                                               ('Zoetzuur', NULL, NULL, 'Zoete house / Zure techno', '2025-11-08', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'), '/img/party_zoetzuur.jpg'),
-                                                                                                               ('Oldies but Goldies', NULL, NULL, 'afterparty@home van THE BOX!', '2025-10-31', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'), '/img/party_oldiesbutgoldies.jpg'),
-                                                                                                               ('Sapphire Soiree', 45, NULL, 'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!', '2025-11-15', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'Tivoli'), '/img/party_sapphiresoiree.jpg');
+-- PARTYpphire Soiree', 45, NULL, 'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!', '2025-11-15', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'Tivoli'), '/img/party_sapphiresoiree.jpg');
 
 INSERT INTO BEDRIJF (name, image_url, description, phone, email) VALUES ('Brussels Prime Realty','/img/bedrijflogo1.svg','Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.','+32 2 512 34 56','info@brusselsprime.be'),
                                                                         ('Antwerp Urban Homes','https://images.unsplash.com/photo-1497366216548-37526070297c','Modern vastgoedkantoor met focus op stadswoningen en appartementen in Antwerpen.','+32 3 234 56 78','contact@urbanhomes.be'),
