@@ -53,9 +53,11 @@ VALUES
      TRUE,
      '2030','RENT',null,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
+     'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg');
 
-     'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg'),
-
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
     ('Luxury Villa Antalya',
      'Sea view private villa with pool',
      450000,
@@ -69,8 +71,11 @@ VALUES
      FALSE,
      '2000','RENT',null,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg'),
+     'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg');
 
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
     ('Single Car Garage Rotterdam',
      'Secure garage with automatic door',
      25000,
@@ -82,10 +87,13 @@ VALUES
      'Rotterdam',
      FALSE,
      FALSE,
-     '2660','SELL',TRUE,
+     '2660','SALE',TRUE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/845599/pexels-photo-845599.jpeg'),
+     'https://images.pexels.com/photos/845599/pexels-photo-845599.jpeg');
 
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
     ('Land Plot Utrecht',
      'Empty land suitable for agriculture',
      80000,
@@ -97,10 +105,14 @@ VALUES
      'Utrecht',
      FALSE,
      FALSE,
-     '2020','SELL',null,
+     '2020','SALE',null,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg'),
+     'https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg');
 
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
     ('Old Apartment Kadıköy',
      'Needs renovation but great location',
      90000,
@@ -114,9 +126,11 @@ VALUES
      TRUE,
      '2100','SELL',TRUE,
              (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg'),
+     'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg');
 
--- 1
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Modern Apartment in Brussels Centre',
  'Renovated and bright apartment close to Grand Place',
  185000,
@@ -130,9 +144,12 @@ VALUES
  TRUE,
  '1000','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/259583/pexels-photo-259583.jpeg'),
+ 'https://images.pexels.com/photos/259583/pexels-photo-259583.jpeg');
 
--- 2
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Cozy House in Antwerp Zuid',
  'Charming family house in a quiet residential area',
  320000,
@@ -146,9 +163,11 @@ VALUES
  FALSE,
  '2000','RENT',TRUE,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg'),
+ 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg');
 
--- 3
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Renovation Project Apartment in Ghent',
  'Old apartment with investment potential near city centre',
  95000,
@@ -162,9 +181,11 @@ VALUES
  TRUE,
  '9000','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg'),
+ 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg');
 
--- 4
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Luxury Penthouse in Bruges',
  'Top-floor penthouse with canal views and large terrace',
  540000,
@@ -178,9 +199,11 @@ VALUES
  TRUE,
  '8000','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg'),
+ 'https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg');
 
--- 5
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Budget-Friendly Apartment in Leuven',
  'Affordable rental apartment ideal for students',
  8500,
@@ -194,9 +217,11 @@ VALUES
  TRUE,
  '3000','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg'),
+ 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg');
 
--- 6
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Spacious Family House in Liège',
  'Large renovated home close to local shops',
  245000,
@@ -210,9 +235,11 @@ VALUES
  FALSE,
  '4000','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg'),
+ 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg');
 
--- 7
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Studio Apartment Near Brussels EU Quarter',
  'Compact and modern studio perfect for young professionals',
  11000,
@@ -226,9 +253,11 @@ VALUES
  TRUE,
  '1040','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg'),
+ 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg');
 
--- 8
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Country House in Namur',
  'Quiet countryside house with large private garden',
  390000,
@@ -242,9 +271,11 @@ VALUES
  FALSE,
  '5000','SALE',FALSE,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg'),
+ 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg');
 
--- 9
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Renovated Apartment in Antwerp Berchem',
  'Sunny apartment close to train station',
  165000,
@@ -258,9 +289,11 @@ VALUES
  TRUE,
  '2600','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg'),
+ 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg');
 
--- 10
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
+VALUES
 ('Bright Apartment in Ghent Waterside',
  'Open-plan living with water view, recently renovated',
  210000,
@@ -282,14 +315,14 @@ VALUES
 -- User/ Owner
 
 INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES
-                                                                         ('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'Peeters Real Estate', 'MAKELAAR'),
-                                                                         ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'Janssens Homes', 'MAKELAAR'),
-                                                                         ('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'Vermeulen Properties', 'MAKELAAR'),
-                                                                         ('Marie Claes', 'marie.claes@example.be', '+32470123459', 'Claes Real Estate', 'MAKELAAR'),
-                                                                         ('Louis Hermans', 'louis.hermans@example.be', '+32470123460', 'Hermans Estates', 'MAKELAAR'),
-                                                                         ('Sophie Dubois', 'sophie.dubois@example.be', '+32470123461', NULL, 'PRIVATE'),
-                                                                         ('Jules Lambert', 'jules.lambert@example.be', '+32470123462', NULL, 'PRIVATE'),
-                                                                         ('Léa Moreau', 'lea.moreau@example.be', '+32470123463', NULL, 'PRIVATE'),
+                                                                         ('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'Peeters Real Estate', 'MAKELAAR');
+                                                                         ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'Janssens Homes', 'MAKELAAR');
+                                                                         ('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'Vermeulen Properties', 'MAKELAAR');
+                                                                         ('Marie Claes', 'marie.claes@example.be', '+32470123459', 'Claes Real Estate', 'MAKELAAR');
+                                                                         ('Louis Hermans', 'louis.hermans@example.be', '+32470123460', 'Hermans Estates', 'MAKELAAR');
+                                                                         ('Sophie Dubois', 'sophie.dubois@example.be', '+32470123461', NULL, 'PRIVATE');
+                                                                         ('Jules Lambert', 'jules.lambert@example.be', '+32470123462', NULL, 'PRIVATE');
+                                                                         ('Léa Moreau', 'lea.moreau@example.be', '+32470123463', NULL, 'PRIVATE');
                                                                          ('Victor De Smet', 'victor.desmet@example.be', '+32470123464', NULL, 'PRIVATE');
 
 -- Owner
