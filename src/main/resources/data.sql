@@ -7,10 +7,6 @@
 --         '2025-10-10', '10:00',
 --         '/img/party_spring.jpg');
 --
-INSERT INTO BEDRIJF
-(name)
-VALUES ('HEYLEN');
---
 -- INSERT INTO PARTY
 -- (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, image_url)
 -- VALUES ('Uppercuts', null, null, ' ',
@@ -314,16 +310,16 @@ VALUES
 
 -- User/ Owner
 
-INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES
-                                                                         ('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'Peeters Real Estate', 'MAKELAAR');
-                                                                         ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'Janssens Homes', 'MAKELAAR');
-                                                                         ('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'Vermeulen Properties', 'MAKELAAR');
-                                                                         ('Marie Claes', 'marie.claes@example.be', '+32470123459', 'Claes Real Estate', 'MAKELAAR');
-                                                                         ('Louis Hermans', 'louis.hermans@example.be', '+32470123460', 'Hermans Estates', 'MAKELAAR');
-                                                                         ('Sophie Dubois', 'sophie.dubois@example.be', '+32470123461', NULL, 'PRIVATE');
-                                                                         ('Jules Lambert', 'jules.lambert@example.be', '+32470123462', NULL, 'PRIVATE');
-                                                                         ('Léa Moreau', 'lea.moreau@example.be', '+32470123463', NULL, 'PRIVATE');
-                                                                         ('Victor De Smet', 'victor.desmet@example.be', '+32470123464', NULL, 'PRIVATE');
+
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'Peeters Real Estate', 'MAKELAAR');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'Janssens Homes', 'MAKELAAR');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'Vermeulen Properties', 'MAKELAAR');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES ('Marie Claes', 'marie.claes@example.be', '+32470123459', 'Claes Real Estate', 'MAKELAAR');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES('Louis Hermans', 'louis.hermans@example.be', '+32470123460', 'Hermans Estates', 'MAKELAAR');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES ('Sophie Dubois', 'sophie.dubois@example.be', '+32470123461', NULL, 'PRIVATE');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES('Jules Lambert', 'jules.lambert@example.be', '+32470123462', NULL, 'PRIVATE');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES('Léa Moreau', 'lea.moreau@example.be', '+32470123463', NULL, 'PRIVATE');
+INSERT INTO OWNER (owner_Name, email, phone_number, company, owner_type) VALUES('Victor De Smet', 'victor.desmet@example.be', '+32470123464', NULL, 'PRIVATE');
 
 -- Owner
 
@@ -376,20 +372,20 @@ INSERT INTO VENUE (VENUE_NAME, LINK_MORE_INFO, CAPACITY, FOOD_PROVIDED, INDOOR, 
                                                                                                                                                                             ('Tivoli', 'https://www.kasteeltivoli.be/locatie', 500, true, true, true, true, 'Mechelen', 8, '/img/venue_tivoli.jpg'),
                                                                                                                                                                             ('Kruidtuin', 'https://www.mechelen.be/kruidtuin', 500, false, false, true, false, 'Mechelen', 1, '/img/venue_kruidtuin.jpg');
 
--- ALBUM
-INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock) VALUES
-                                                                                              ('Random Access Memories', 'Daft Punk', 2013, 'Electronic', 'Columbia Records', 15.99, 40),
-                                                                                              ('25', 'Adele', 2015, 'Pop', 'XL Recordings', 16.50, 200),
-                                                                                              ('Abbey Road', 'The Beatles', 1969, 'Rock', 'Apple Records', 18.99, 75),
-                                                                                              ('After Hours', 'The Weeknd', 2020, 'R&B', 'Republic Records', 15, 20),
-                                                                                              ('To Pimp a Butterfly', 'Kendrick Lamar', 2015, 'Hip-Hop', 'Top Dawg Entertainment', 17.99, 90),
-                                                                                              ('1989', 'Taylor Swift', 2014, 'Pop', 'Big Machine Records', 13.99, 110),
-                                                                                              ('Rumours', 'Fleetwood Mac', 1977, 'Rock', 'Warner Bros. Records', 14.50, 80),
-                                                                                              ('Currents', 'Tame Impala', 2015, 'Psychedelic Rock', 'Modular Recordings', 15.99, 95),
-                                                                                              ('Future Nostalgia', 'Dua Lipa', 2020, 'Pop', 'Warner Records', 14.49, 140),
-                                                                                              ('Blackstar', 'David Bowie', 2016, 'Art Rock', 'ISO Records', 16.99, 60),
-                                                                                              ('DAMN.', 'Kendrick Lamar', 2017, 'Hip-Hop', 'Top Dawg Entertainment', 15.99, 100),
-                                                                                              ('AM', 'Arctic Monkeys', 2013, 'Indie Rock', 'Domino Recording Company', 13.49, 130);
+-- -- ALBUM
+-- INSERT INTO Album (title, artist, release_year, genre, label, price_eur, available_stock) VALUES
+--                                                                                               ('Random Access Memories', 'Daft Punk', 2013, 'Electronic', 'Columbia Records', 15.99, 40),
+--                                                                                               ('25', 'Adele', 2015, 'Pop', 'XL Recordings', 16.50, 200),
+--                                                                                               ('Abbey Road', 'The Beatles', 1969, 'Rock', 'Apple Records', 18.99, 75),
+--                                                                                               ('After Hours', 'The Weeknd', 2020, 'R&B', 'Republic Records', 15, 20),
+--                                                                                               ('To Pimp a Butterfly', 'Kendrick Lamar', 2015, 'Hip-Hop', 'Top Dawg Entertainment', 17.99, 90),
+--                                                                                               ('1989', 'Taylor Swift', 2014, 'Pop', 'Big Machine Records', 13.99, 110),
+--                                                                                               ('Rumours', 'Fleetwood Mac', 1977, 'Rock', 'Warner Bros. Records', 14.50, 80),
+--                                                                                               ('Currents', 'Tame Impala', 2015, 'Psychedelic Rock', 'Modular Recordings', 15.99, 95),
+--                                                                                               ('Future Nostalgia', 'Dua Lipa', 2020, 'Pop', 'Warner Records', 14.49, 140),
+--                                                                                               ('Blackstar', 'David Bowie', 2016, 'Art Rock', 'ISO Records', 16.99, 60),
+--                                                                                               ('DAMN.', 'Kendrick Lamar', 2017, 'Hip-Hop', 'Top Dawg Entertainment', 15.99, 100),
+--                                                                                               ('AM', 'Arctic Monkeys', 2013, 'Indie Rock', 'Domino Recording Company', 13.49, 130);
 
 -- PARTY
 INSERT INTO PARTY (name, price_presale_in_eur, price_in_eur, extra_info, date, doors, venue_id, image_url) VALUES
@@ -400,7 +396,7 @@ INSERT INTO PARTY (name, price_presale_in_eur, price_in_eur, extra_info, date, d
                                                                                                                ('Oldies but Goldies', NULL, NULL, 'afterparty@home van THE BOX!', '2025-10-31', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'De Kuub'), '/img/party_oldiesbutgoldies.jpg'),
                                                                                                                ('Sapphire Soiree', 45, NULL, 'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!', '2025-11-15', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'Tivoli'), '/img/party_sapphiresoiree.jpg');
 
-INSERT INTO BEDRIJF (name, image_url, description, phone, email) VALUES ('Brussels Prime Realty','https://images.unsplash.com/photo-1554469384-e58fac16e23a','Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.','+32 2 512 34 56','info@brusselsprime.be'),
+INSERT INTO BEDRIJF (name, image_url, description, phone, email) VALUES ('Brussels Prime Realty','/img/bedrijflogo1.svg','Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.','+32 2 512 34 56','info@brusselsprime.be'),
                                                                         ('Antwerp Urban Homes','https://images.unsplash.com/photo-1497366216548-37526070297c','Modern vastgoedkantoor met focus op stadswoningen en appartementen in Antwerpen.','+32 3 234 56 78','contact@urbanhomes.be'),
                                                                         ('Gent Property Partners','https://images.unsplash.com/photo-1503387762-592deb58ef4e','Betrouwbare partner voor verhuur en verkoop van vastgoed in Gent en omgeving.','+32 9 210 98 76','info@gentproperty.be'),
                                                                         ('Leuven Living Real Estate','https://images.unsplash.com/photo-1497366754035-f200968a6e72','Gespecialiseerd in vastgoed voor gezinnen, expats en studenten in Leuven.','+32 16 345 67 89','hello@leuvenliving.be'),

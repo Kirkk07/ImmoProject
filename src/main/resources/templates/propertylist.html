@@ -48,11 +48,11 @@
                         <span th:text="|*{city} |" class="mb-2"></span>
                     </p>
                     <h6 th:text="*{title}" class="text-black mb-2"></h6>
-                    <h6 th:if="${property.statusType.name() == 'SALERENOVATIONNEEDED'}" th:text="'Renovate'" class="mb-2"></h6>
+                    <h6 th:if="${property.statusType == 'SALERENOVATIONNEEDED'}" th:text="'Renovate'" class="mb-2"></h6>
                 </a>
             </div>
         </div>
-    </div>
+    </div>    </div>
 
 <!--    Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>
