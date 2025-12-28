@@ -10,49 +10,201 @@
 <!-- Navbar -->
 <div th:replace="~{fragments/header :: navbar}"/>
 
-<div class="container">
-    <h1> Properties</h1>
-    <div class=" d-flex align-items-center justify-content-between mb-3 col-12">
-        <p class="mb-0">Er zijn in totaal <b th:text="${propertyCount}">0</b> properties.</p>
-        <form th:action="@{/propertylist}" method="get" class="d-flex align-items-center gap-2 w-25">
-            <input type="text"
-                   class="form-control"
-                   placeholder="Zoek"
-                   aria-label="search"
-                   name="city"
-                   th:value="${param.city}">
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+<!--<div class="container">-->
+<!--    <h1> Properties</h1>-->
+<!--    <div class=" d-flex align-items-center justify-content-between mb-3 col-12">-->
+<!--        <p class="mb-0">Er zijn in totaal <b th:text="${propertyCount}">0</b> properties.</p>-->
+<!--        <form th:action="@{/propertylist}" method="get" class="d-flex align-items-center gap-2 w-25">-->
+<!--            <input type="text"-->
+<!--                   class="form-control"-->
+<!--                   placeholder="Zoek"-->
+<!--                   aria-label="search"-->
+<!--                   name="city"-->
+<!--                   th:value="${param.city}">-->
+<!--            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>-->
 
-        </form>
-    </div>
-<!--    Old version of Venuelist-->
+<!--        </form>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    Old version of Venuelist&ndash;&gt;-->
 
-    <!--    Iterated version of Venuelist-->
-    <div class="row">
-        <div th:each="property: ${properties}"
-             th:object="${property}"
-             class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex">
-            <div class="card m-1 p-2 text-center flex-fill">
-                <a th:href="@{|/propertydetails/*{id}|}" class="text-decoration-none d-block">
-                    <div>
-                        <img th:src="${property.imageUrl}" alt="Venue image" class="img-fluid rounded w-100" style="height: 200px; object-fit: cover;">
+<!--    &lt;!&ndash;    Iterated version of Venuelist&ndash;&gt;-->
+<!--    <div class="row">-->
+<!--        <div th:each="property: ${properties}"-->
+<!--             th:object="${property}"-->
+<!--             class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex">-->
+<!--            <div class="card m-1 p-2 text-center flex-fill">-->
+<!--                <a th:href="@{|/propertydetails/*{id}|}" class="text-decoration-none d-block">-->
+<!--                    <div>-->
+<!--                        <img th:src="${property.imageUrl}" alt="Venue image" class="img-fluid rounded w-100" style="height: 200px; object-fit: cover;">-->
+<!--                    </div>-->
+<!--                    <h3 th:text="|€ *{price} |" class="mb-2"></h3>-->
+<!--                    <h5 th:text="|*{propertyType}|" class="mb-2"></h5>-->
+<!--                    <p>-->
+<!--                        <span th:if="*{rooms > 0}" th:text="|*{rooms} slp. |" class="mb-2"></span>-->
+<!--                        <span th:text="|*{area} m² |" class="text-black mb-2"></span>-->
+<!--                    </p>-->
+<!--                    <p>-->
+<!--                        <span th:text="|*{postcode} |" class="text-black mb-2"></span>-->
+<!--                        <span th:text="|*{city} |" class="mb-2"></span>-->
+<!--                    </p>-->
+<!--                    <h6 th:text="*{title}" class="text-black mb-2"></h6>-->
+<!--                    <h6 th:if="${property.statusType == 'SALERENOVATIONNEEDED'}" th:text="'Renovate'" class="mb-2"></h6>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>    </div>-->
+<!-- STICKY FILTER PANEL -->
+<div class="sticky-top bg-white border-bottom" style="top: 0; z-index: 1020;">
+    <div class="container-lg py-2">
+
+        <!-- ÜST SATIR -->
+        <div class="d-flex align-items-center justify-content-between gap-3">
+
+            <!-- SOL: TE KOOP / TE HUUR -->
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary active">
+                    Te Koop
+                </button>
+                <button type="button" class="btn btn-outline-primary">
+                    Te Huur
+                </button>
+            </div>
+
+            <!-- SAĞ: ADVANCED FILTER -->
+            <button class="btn btn-outline-secondary"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#advancedFilter">
+                Advanced filters
+            </button>
+        </div>
+
+        <!-- ADVANCED FILTER (COLLAPSE) -->
+        <div class="collapse mt-3" id="advancedFilter">
+            <form method="get" action="/propertylist">
+
+                <div class="row g-3 align-items-end">
+
+                    <!-- CITY -->
+                    <div class="col-12 col-md-4">
+                        <label class="form-label">City</label>
+                        <input type="text"
+                               name="city"
+                               class="form-control"
+                               placeholder="Amsterdam">
                     </div>
-                    <h3 th:text="|€ *{price} |" class="mb-2"></h3>
-                    <h5 th:text="|*{propertyType}|" class="mb-2"></h5>
-                    <p>
-                        <span th:if="*{rooms > 0}" th:text="|*{rooms} slp. |" class="mb-2"></span>
-                        <span th:text="|*{area} m² |" class="text-black mb-2"></span>
-                    </p>
-                    <p>
-                        <span th:text="|*{postcode} |" class="text-black mb-2"></span>
-                        <span th:text="|*{city} |" class="mb-2"></span>
-                    </p>
-                    <h6 th:text="*{title}" class="text-black mb-2"></h6>
-                    <h6 th:if="${property.statusType == 'SALERENOVATIONNEEDED'}" th:text="'Renovate'" class="mb-2"></h6>
-                </a>
+
+                    <!-- ROOMS -->
+                    <div class="col-6 col-md-2">
+                        <label class="form-label">Rooms</label>
+                        <select name="rooms" class="form-select">
+                            <option value="">Any</option>
+                            <option value="1">1+</option>
+                            <option value="2">2+</option>
+                            <option value="3">3+</option>
+                        </select>
+                    </div>
+
+                    <!-- PRICE -->
+                    <div class="col-6 col-md-3">
+                        <label class="form-label">Max price</label>
+                        <input type="number"
+                               name="price"
+                               class="form-control"
+                               placeholder="€">
+                    </div>
+
+                    <!-- SUBMIT -->
+                    <div class="col-12 col-md-3 d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            Apply filters
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-lg">
+    <div class="row justify-content-center">
+
+        <!-- SOL: PROPERTY LIST -->
+        <div class="col-12 col-lg-8">
+
+            <!-- PROPERTY LIST -->
+            <div class="row">
+                <div th:each="property: ${properties}"
+                     th:object="${property}"
+                     class="col-12 mb-3">
+
+                    <div class="card p-3">
+                        <a th:href="@{|/propertydetails/*{id}|}"
+                           class="text-decoration-none text-black d-flex gap-3">
+
+                            <!-- IMAGE -->
+                            <img th:src="${property.imageUrl}"
+                                 class="rounded"
+                                 style="width: 220px; height: 150px; object-fit: cover;">
+
+                            <!-- CONTENT -->
+                            <div class="flex-grow-1">
+                                <h4 th:text="|€ *{price}|"></h4>
+                                <h6 th:text="*{propertyType}"></h6>
+
+                                <p class="mb-1">
+                                    <span th:if="*{rooms > 0}" th:text="|*{rooms} slp.|"></span>
+                                    ·
+                                    <span th:text="|*{area} m²|"></span>
+                                </p>
+
+                                <p class="mb-1">
+                                    <span th:text="*{postcode}"></span>
+                                    <span th:text="*{city}"></span>
+                                </p>
+
+                                <h6 th:text="*{title}"></h6>
+
+                                <span th:if="${property.statusType == 'SALERENOVATIONNEEDED'}"
+                                      class="badge bg-warning text-dark">
+                                Renovate
+                            </span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>    </div>
+
+        <!-- SAĞ: BESTSELLER -->
+        <div class="col-12 col-lg-4">
+            <div class="sticky-top" style="top: 80px;">
+                <h5 class="mb-3">🔥 En iyi fırsatlar</h5>
+
+                <div class="card mb-3">
+                    <img src="/img/demo1.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h6>€ 275.000</h6>
+                        <p class="mb-0">2 slp · 85 m²</p>
+                        <small>Amsterdam</small>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <img src="/img/demo2.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h6>€ 310.000</h6>
+                        <p class="mb-0">3 slp · 102 m²</p>
+                        <small>Rotterdam</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 <!--    Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>
