@@ -9,16 +9,21 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface PropertyRepository extends CrudRepository<Property, Integer> {
-    @Query("SELECT p FROM Property p"   +
-           " WHERE (:type IS NULL OR p.propertyType = :type) AND " +
-            "(:minPrice IS NULL OR p.price >= :minPrice) AND " +
-            "(:maxPrice IS NULL OR p.price <= :maxPrice) AND " +
-            "(:city IS NULL OR p.city IS NULL OR LOWER(p.city) LIKE LOWER(CONCAT('%', :city, '%')))")
-
-    List<Property> findByFilter(@Param("type") String type,
-                                @Param("minPrice") Double minPrice,
-                                @Param("maxPrice") Double maxPrice,
-                                @Param("city") String city);
+    @Query("""
+        SELECT p FROM Property p
+        WHERE (:city IS NULL OR LOWER(p.city) LIKE LOWER(CONCAT('%', :city, '%')))
+        AND (:rooms IS NULL OR p.rooms >= :rooms)
+        AND (:minPrice IS NULL OR p.price >= :minPrice)
+        AND (:maxPrice IS NULL OR p.price <= :maxPrice)
+        AND (:statusType IS NULL OR p.statusType = :statusType)
+        """)
+    List<Property> filterByProperties(
+            @Param("city") String city,
+            @Param("rooms") Integer rooms,
+            @Param("minPrice") Integer minPrice,
+            @Param("maxPrice") Integer maxPrice,
+            @Param("statusType") String statusType
+    );
     List<Property> findByStatusType(Property statusType);
 
 
