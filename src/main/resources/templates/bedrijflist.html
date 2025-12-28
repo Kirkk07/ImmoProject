@@ -42,8 +42,6 @@
              class="card-group col col-12 col-sm-6 col md-4 col-lg-3 col-xl-2">
             <div class="card m-1 p-2 text-center">
                 <a th:href="@{|bedrijfdetails/*{id}|}" class="text-decoration-none d-block">
-                    <!-- Name -->
-                    <h3 th:text="*{name}" class="text-black mb-2"></h3>
                     <!-- Resim -->
                     <div>
                         <img th:src="${bedrijf.imageUrl}"
@@ -51,18 +49,8 @@
                              class="img-fluid rounded"
                              style="max-width: 100%;">
                     </div>
-
-<!--                    &lt;!&ndash; Bio &ndash;&gt;-->
-<!--                    <h6 th:text="|*{bio}|" class="mb-2"></h6>-->
-<!--&lt;!&ndash;                        Genre&ndash;&gt;-->
-
-<!--&lt;!&ndash;                    Link&ndash;&gt;-->
-<!--                    <h6 th:text="|*{linkMoreInfo}|" class="mb-2"></h6>-->
-<!--&lt;!&ndash;                    portfoli&ndash;&gt;-->
-<!--                    <h6 th:text="|*{portfolio}|" class="mb-2"></h6>-->
-
-
-
+                    <!-- Name -->
+                    <h3 th:text="*{name}" class="text-black mb-2"></h3>
                 </a>
             </div>
         </div>

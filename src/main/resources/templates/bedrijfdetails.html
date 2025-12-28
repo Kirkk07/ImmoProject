@@ -39,8 +39,24 @@
                              class="img-fluid rounded "
                              style="width: 100%; max-width: 500px;">
                     </div>
+    <div class="col-md-6">
+        <h5>Details:</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: <span th:text="*{description} + ' €'"></span></li>
+            <li class="list-group-item">Type: <span th:text="*{phone}"></span></li>
+            <!--            <li class="list-group-item">Rooms: <span th:text="*{}"></span></li>-->
+            <!--            <li class="list-group-item">Bathrooms: <span th:text="*{bathrooms}"></span></li>-->
+            <!--            <li class="list-group-item">Area: <span th:text="*{area} + ' m²'"></span></li>-->
+            <!--            <li class="list-group-item">Address: <span th:text="*{address}"></span></li>-->
+            <!--            <li class="list-group-item" th:if="*{hasParking}">Has Parking</li>-->
+            <!--            <li class="list-group-item" th:if="*{nearPublicTransport}">Near Public Transport</li>-->
+            <!--            <li class="list-group-item" ><span th:text="${property.owner?.username}">No owner</span>-->
+
+            </li>
+        </ul></div>
+    </div>
                 </div>
-            </div>
+
         </div>
     </div>
 
