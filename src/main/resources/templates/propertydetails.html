@@ -36,9 +36,16 @@
                 <li class="list-group-item">Address: <span th:text="*{address}"></span></li>
                 <li class="list-group-item" th:if="*{hasParking}">Has Parking</li>
                 <li class="list-group-item" th:if="*{nearPublicTransport}">Near Public Transport</li>
-                <li class="list-group-item" ><span th:text="${property.owner?.username}">No owner</span>
-
+<!--                <li class="list-group-item">-->
+<!--                    Owner: <span th:text="*{owner != null ? owner.ownerName : 'No owner'}"></span>-->
+<!--                </li>   <li class="list-group-item">-->
+                <li class="list-group-item">
+                    Owner:
+                    <span th:if="*{owner != null}" th:text="*{owner.ownerType}"></span>
+                    <span th:unless="*{owner != null}">Private owner</span>
                 </li>
+
+
             </ul></div>
 
             <!-- Ziyaret Talebi Formu -->
@@ -63,6 +70,7 @@
     <div class="mt-3">
         <p th:text="*{description}"></p>
     </div>
+
 </main>
 
 <main class="container" th:unless="${property}">

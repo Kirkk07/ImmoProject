@@ -3,6 +3,7 @@ package be.thomasmore.party.model;
 import jakarta.persistence.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Owner {
@@ -15,6 +16,9 @@ public class Owner {
     private String phoneNumber;
     private String company;
     private String ownerType;
+    //    // One user can have many properties
+    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
+    private Collection<Property> properties;
 
     public String getOwnerType() {
         return ownerType;
@@ -45,9 +49,7 @@ public class Owner {
 
 
 
-    //    // One user can have many properties
-    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
-    private Collection<Property> properties;
+
 
     // Getter & Setter
     public Integer getId() { return id; }
@@ -74,6 +76,5 @@ public class Owner {
         this.company = company;
     }
 
-//    public List<Property> getProperties() { return properties; }
-//    public void setProperties(List<Property> properties) { this.properties = properties; }
+
 }
