@@ -28,7 +28,7 @@ import jakarta.persistence.*;
        // private  String ownerName;
 
         //Mant to ONe Owner Property
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "owner_id")
         private Owner owner;
 

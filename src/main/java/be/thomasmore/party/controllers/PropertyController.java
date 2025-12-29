@@ -28,17 +28,22 @@ public class PropertyController {
     }
 
     @GetMapping("/propertylist")
-    public String propertyList(Model model,
-                               @RequestParam(required = false) String type,
-                               @RequestParam(required = false) Double minPrice,
-                               @RequestParam(required = false) Double maxPrice,
-                               @RequestParam(required = false) String city) {
-        List<Property> properties = propertyRepository.findByFilter(type, minPrice, maxPrice, city);
-        logger.info(String.format("PropertyList: type=%s, minPrice=%s, maxPrice=%s, city=%s", type, minPrice, maxPrice, city));
+    public String propertyList(
+            @RequestParam(required = false) String city,
+            @RequestParam(required = false) Integer rooms,
+            @RequestParam(required = false) Integer minPrice,
+            @RequestParam(required = false) Integer maxPrice,
+            @RequestParam(required = false) String statusType,
+            @RequestParam(required = false) String propertyType,
+            @RequestParam(required = false) String area,
+            Model model) {
+
+        List<Property> properties =
+                propertyRepository.filterByProperties(city, rooms, minPrice,maxPrice,statusType,propertyType,area);
+        logger.info(String.format("PropertyList: city=%s, rooms=%s,minPrice=%s, maxPrice=%s, statusType=%s, propertyType=%s, area=%s", city, rooms, minPrice, maxPrice,statusType, propertyType, area));
         model.addAttribute("properties", properties);
         long propertyCount = propertyRepository.count();
         model.addAttribute("propertyCount", propertyCount);
-
         return "propertylist";
     }
 
