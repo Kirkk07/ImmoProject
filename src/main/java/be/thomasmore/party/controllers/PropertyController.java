@@ -34,11 +34,13 @@ public class PropertyController {
             @RequestParam(required = false) Integer minPrice,
             @RequestParam(required = false) Integer maxPrice,
             @RequestParam(required = false) String statusType,
+            @RequestParam(required = false) String propertyType,
+            @RequestParam(required = false) String area,
             Model model) {
 
         List<Property> properties =
-                propertyRepository.filterByProperties(city, rooms, minPrice,maxPrice,statusType);
-        logger.info(String.format("PropertyList: city=%s, rooms=%s,minPrice=%s, maxPrice=%s, statusType=%s", city, rooms, minPrice, maxPrice,statusType));
+                propertyRepository.filterByProperties(city, rooms, minPrice,maxPrice,statusType,propertyType,area);
+        logger.info(String.format("PropertyList: city=%s, rooms=%s,minPrice=%s, maxPrice=%s, statusType=%s, propertyType=%s, area=%s", city, rooms, minPrice, maxPrice,statusType, propertyType, area));
         model.addAttribute("properties", properties);
         long propertyCount = propertyRepository.count();
         model.addAttribute("propertyCount", propertyCount);

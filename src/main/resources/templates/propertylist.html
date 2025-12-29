@@ -72,7 +72,7 @@
                             <h5 class="modal-title">Filters</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-
+<!--                        Filter city-->
                         <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
                             <div class="col-12 mt-3">
                                 <label class="form-label">City</label>
@@ -81,10 +81,78 @@
                                        class="form-control"
                                        placeholder="Type city..."
                                        th:value="${param.city}">
-
-
                             </div>
                         </div>
+<!-- Filter Min Price-->
+                        <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
+                            <div class="col-12 mt-3">
+                                <label class="form-label">Minimum Price</label>
+                                <input type="number"
+                                       name="minPrice"
+                                       class="form-control"
+                                       placeholder="Type minimum price.."
+                                       step="10000"
+                                       th:value="${param.minPrice}">
+                            </div>
+                        </div>
+                        <!-- Filter Max Price-->
+                        <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
+                            <div class="col-12 mt-3">
+                                <label class="form-label">Maximum Price</label>
+                                <input type="number"
+                                       name="maxPrice"
+                                       class="form-control"
+                                       placeholder="Type maximum price.."
+                                       step="10000"
+                                       th:value="${param.maxPrice}">
+                            </div>
+                        </div>
+
+                        <!-- Filter room-->
+                        <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
+                            <div class="col-12 mt-3">
+                                <label class="form-label"> Room</label>
+                                <input type="number"
+                                       name="rooms"
+                                       class="form-control"
+                                       placeholder="Room.."
+                                       step="1"
+                                       th:value="${param.rooms}">
+                            </div>
+                        </div>
+                        <!-- Filter Property Type Garage Veld Apartement Huis-->
+                        <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
+                            <div class="col-12 mt-3">
+                            <label class="form-label">Property Type</label>
+                            <select name="propertyType" class="form-select">
+
+                                <option th:value="APARTMENT" th:text="'Apartment'"
+                                        th:selected="${param.propertyType == 'APARTMENT'}"></option>
+                                <option th:value="GARAGE" th:text="'Garage'"
+                                        th:selected="${param.propertyType == 'GARAGE'}"></option>
+                                <option th:value="VELD" th:text="'Bouwland'"
+                                        th:selected="${param.propertyType == 'VELD'}"></option>
+                                <option th:value="HUIS" th:text="'House'"
+                                        th:selected="${param.propertyType == 'HUIS'}"></option>
+                            </select>
+                        </div>
+                        </div>
+
+                        <!-- Filter area-->
+                        <div class="modal-body mx-2 border rounded-3 shadow-sm bg-light">
+                            <div class="col-12 mt-3">
+                                <label class="form-label">Max Area m2</label>
+                                <input type="number"
+                                       name="area"
+                                       class="form-control"
+                                       placeholder="Max Area.."
+
+                                       th:value="${param.area}">
+                            </div>
+                        </div>
+
+
+
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

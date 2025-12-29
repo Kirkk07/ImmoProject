@@ -12,19 +12,23 @@ public interface PropertyRepository extends CrudRepository<Property, Integer> {
     @Query("""
         SELECT p FROM Property p
         WHERE (:city IS NULL OR LOWER(p.city) LIKE LOWER(CONCAT('%', :city, '%')))
-        AND (:rooms IS NULL OR p.rooms >= :rooms)
+        AND (:rooms IS NULL OR p.rooms = :rooms)
         AND (:minPrice IS NULL OR p.price >= :minPrice)
         AND (:maxPrice IS NULL OR p.price <= :maxPrice)
         AND (:statusType IS NULL OR p.statusType = :statusType)
+        AND (:propertyType IS NULL OR p.propertyType = :propertyType)
+        AND (:area IS NULL OR p.area <= :area)
         """)
     List<Property> filterByProperties(
             @Param("city") String city,
             @Param("rooms") Integer rooms,
             @Param("minPrice") Integer minPrice,
             @Param("maxPrice") Integer maxPrice,
-            @Param("statusType") String statusType
+            @Param("statusType") String statusType,
+            @Param("propertyType") String propertyType,
+            @Param("area") String area
     );
-    List<Property> findByStatusType(Property statusType);
+
 
 
 }
