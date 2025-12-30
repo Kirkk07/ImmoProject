@@ -1,9 +1,8 @@
 package be.thomasmore.party.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
 
 @Entity
 public class Bedrijf {
@@ -12,8 +11,6 @@ public class Bedrijf {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
-
     private String imageUrl;
     private String description;
     private String phone;
@@ -68,4 +65,15 @@ public class Bedrijf {
         this.email = email;
     }
 
+
+    @OneToMany(mappedBy = "bedrijf")
+    private Collection<Owner> owners;
+
+    public Collection<Owner> getOwners() {
+        return owners;
+    }
+
+    public void setOwner(Collection<Owner> owners) {
+        this.owners = owners;
+    }
 }

@@ -37,11 +37,21 @@
                 <li class="list-group-item">Description: <span th:text="*{description}"></span></li>
                 <li class="list-group-item">Email: <span th:text="*{email}"></span></li>
                 <li class="list-group-item">Phone: <span th:text="*{phone}"></span></li>
+                <li class="list-group-item">
+                    Owners:
+                    <ul>
+                        <li th:each="o : *{owners}" th:text="|${o.ownerType} - ${o.ownerName}|"></li>
+                    </ul>
+
+                </li>
+
             </ul>
+            <div th:each="owner: ${owners}"
+                 th:object="${owner}">
+                 <p th:text="|${o.ownerType} - ${o.ownerName}|"></p></div>
+
         </div>
     </div>
-
-
 
 </main>
 
