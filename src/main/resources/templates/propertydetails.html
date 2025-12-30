@@ -41,7 +41,7 @@
 <!--                </li>   <li class="list-group-item">-->
                 <li class="list-group-item">
                     Owner:
-                    <span th:if="*{owner != null}" th:text="*{owner.ownerType}"></span>
+                    <span th:if="*{owner != null}" th:text="|*{owner.ownerType} - *{owner.ownerName}|"></span>
                     <span th:unless="*{owner != null}">Private owner</span>
                 </li>
 
@@ -102,9 +102,7 @@
 
 </main>
 
-<main class="container" th:unless="${property}">
-    <p>No property selected</p>
-</main>
+
 
 <div th:replace=" ~{fragments/footer :: footer}"/>
 
