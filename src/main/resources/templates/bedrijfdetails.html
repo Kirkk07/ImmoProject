@@ -10,59 +10,44 @@
 
 <div th:replace="~{fragments/header :: navbar}"/>
 
-<main class="m-5" th:object="${bedrijf}" th:if="${bedrijf}">
+<main class="container mt-4" th:object="${bedrijf}" th:if="${bedrijf}">
 
-    <div>
-        <h1 class="text-center name" th:text="*{name}"></h1>
-    </div>
+    <h1 class="text-center name" th:text="*{name}"></h1>
 
-    <div class="row">
+    <div class="row mb-3">
         <div class="col text-start">
-            <a th:href="@{|/bedrijfdetails/${prevId}|}" class="btn btn-outline-primary">
-                &lt;
-            </a>
+            <a th:href="@{|/bedrijfdetails/${prevId}|}" class="btn btn-outline-primary">&lt;</a>
         </div>
-
+        <div class="col text-center">
+            <h4 th:text="*{name}"></h4>
+        </div>
         <div class="col text-end">
-            <a th:href="@{|/bedrijfdetails/${nextId}|}" class="btn btn-outline-primary">
-                &gt;
-            </a>
+            <a th:href="@{|/bedrijfdetails/${nextId}|}" class="btn btn-outline-primary">&gt;</a>
         </div>
     </div>
 
-                        </div>
-
-                    </div>
-                    <div class="col-md-6">
-                        <img th:src="${bedrijf.imageUrl}"
-                             alt="Venue image"
-                             class="img-fluid rounded "
-                             style="width: 100%; max-width: 500px;">
-                    </div>
-    <div class="col-md-6">
-        <h5>Details:</h5>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: <span th:text="*{description} + ' €'"></span></li>
-            <li class="list-group-item">Type: <span th:text="*{phone}"></span></li>
-            <!--            <li class="list-group-item">Rooms: <span th:text="*{}"></span></li>-->
-            <!--            <li class="list-group-item">Bathrooms: <span th:text="*{bathrooms}"></span></li>-->
-            <!--            <li class="list-group-item">Area: <span th:text="*{area} + ' m²'"></span></li>-->
-            <!--            <li class="list-group-item">Address: <span th:text="*{address}"></span></li>-->
-            <!--            <li class="list-group-item" th:if="*{hasParking}">Has Parking</li>-->
-            <!--            <li class="list-group-item" th:if="*{nearPublicTransport}">Near Public Transport</li>-->
-            <!--            <li class="list-group-item" ><span th:text="${property.owner?.username}">No owner</span>-->
-
-            </li>
-        </ul></div>
-    </div>
-                </div>
-
+    <div class="row g-4">
+        <div class="col-md-6">
+            <img th:src="@{*{imageUrl}}" class="img-fluid rounded" alt="Property Image">
+        </div>
+        <div class="col-md-6">
+            <h5>Details:</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: <span th:text="*{name}" ></span></li>
+                <li class="list-group-item">Description: <span th:text="*{description}"></span></li>
+                <li class="list-group-item">Email: <span th:text="*{email}"></span></li>
+                <li class="list-group-item">Phone: <span th:text="*{phone}"></span></li>
+            </ul>
         </div>
     </div>
+
+
 
 </main>
 
-
+<main class="container" th:unless="${bedrijf}">
+    <p>No property selected</p>
+</main>
 <!--Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>
 

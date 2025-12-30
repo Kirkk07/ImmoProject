@@ -535,11 +535,103 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
 --                                                                                               ('AM', 'Arctic Monkeys', 2013, 'Indie Rock', 'Domino Recording Company', 13.49, 130);
 
 -- PARTYpphire Soiree', 45, NULL, 'JCI Mechelen bestaat 45 jaar! En dat saffieren jubileum vieren we graag in stijl met een galabal in Kasteel Tivoli. En jij kan erbij zijn!', '2025-11-15', '21:00', (SELECT id FROM VENUE WHERE venue_name = 'Tivoli'), '/img/party_sapphiresoiree.jpg');
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Brussels Prime Realty',
+           '/img/emlak7.jpg',
+           'Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.',
+           '+32 2 512 34 56',
+           'info@brusselsprime.be'
+       );
 
-INSERT INTO BEDRIJF (name, image_url, description, phone, email) VALUES ('Brussels Prime Realty','/img/emlak7.jpg','Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.','+32 2 512 34 56','info@brusselsprime.be'),
-                                                                        ('Antwerp Urban Homes','/img/emlak.jpg','Modern vastgoedkantoor met focus op stadswoningen en appartementen in Antwerpen.','+32 3 234 56 78','contact@urbanhomes.be'),
-                                                                        ('Gent Property Partners','/img/Emlak2.jpg','Betrouwbare partner voor verhuur en verkoop van vastgoed in Gent en omgeving.','+32 9 210 98 76','info@gentproperty.be'),
-                                                                        ('Leuven Living Real Estate','/img/emlak3.jpg','Gespecialiseerd in vastgoed voor gezinnen, expats en studenten in Leuven.','+32 16 345 67 89','hello@leuvenliving.be'),
-                                                                        ('Bruges Heritage Realty','/img/EmlakKonut.jpg','vastgoedkantoor','+32 50 456 12 34','info@brugesheritage.be'),
-                                                                        ('Coastline Estates Ostend','/img/emlak5.jpg','Vastgoedkantoor gespecialiseerd in kustvastgoed aan de Belgische zee.','+32 59 678 90 12','contact@coastlineestates.be');
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Antwerp Urban Homes',
+           '/img/emlak.jpg',
+           'Modern vastgoedkantoor met focus op stadswoningen en appartementen in Antwerpen.',
+           '+32 3 234 56 78',
+           'contact@urbanhomes.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Gent Property Partners',
+           '/img/Emlak2.jpg',
+           'Betrouwbare partner voor verhuur en verkoop van vastgoed in Gent en omgeving.',
+           '+32 9 210 98 76',
+           'info@gentproperty.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Leuven Living Real Estate',
+           '/img/emlak3.jpg',
+           'Gespecialiseerd in vastgoed voor gezinnen, expats en studenten in Leuven.',
+           '+32 16 345 67 89',
+           'hello@leuvenliving.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Bruges Heritage Realty',
+           '/img/EmlakKonut.jpg',
+           'Vastgoedkantoor met focus op historisch en karaktervol vastgoed in Brugge.',
+           '+32 50 456 12 34',
+           'info@brugesheritage.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Coastline Estates Ostend',
+           '/img/emlak5.jpg',
+           'Vastgoedkantoor gespecialiseerd in kustvastgoed aan de Belgische zee.',
+           '+32 59 678 90 12',
+           'contact@coastlineestates.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Mechelen City Realty',
+           '/img/emlak6.jpg',
+           'Lokale vastgoedspecialist voor woningen en appartementen in Mechelen.',
+           '+32 15 123 45 67',
+           'info@mechelencity.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Hasselt Home Experts',
+           '/img/emlak8.jpg',
+           'Professioneel vastgoedkantoor met persoonlijke begeleiding in Limburg.',
+           '+32 11 234 56 78',
+           'contact@hasselthomes.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Namur Prestige Properties',
+           '/img/emlak6.jpg',
+           'Gespecialiseerd in exclusief vastgoed en villa’s in en rond Namen.',
+           '+32 81 345 67 89',
+           'info@namurprestige.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Liège Residential Group',
+           '/img/emlak3.jpg',
+           'Ervaren vastgoedmakelaar voor residentieel vastgoed in Luik.',
+           '+32 4 456 78 90',
+           'contact@liegeresidential.be'
+       );
+
+INSERT INTO BEDRIJF (name, image_url, description, phone, email)
+VALUES (
+           'Charleroi Invest Real Estate',
+           '/img/emlak5.jpg',
+           'Vastgoedpartner voor investeringen en betaalbare woningen in Charleroi.',
+           '+32 71 567 89 01',
+           'info@charleroiinvest.be'
+       );
+
 
