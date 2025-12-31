@@ -1,21 +1,124 @@
 -- insert into venue (venue_name, link_more_info,capacity,food_provided,indoor,outdoor,free_parking_available,city,distance_from_public_transport_in_km,image_url) values
 -- ('De Club', 'https://transitm.mechelen.be/de-club',150,false, true,false,
 --  true,'Mechelen',2,'/img/venue_club.jpg');
+--Bedrijf
 
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Brussels Prime Realty',
+           '/img/emlak7.jpg',
+           'Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.',
+           '+32 2 512 34 56',
+           'info@brusselsprime.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Antwerp Urban Homes',
+           '/img/emlak.jpg',
+           'Modern vastgoedkantoor met focus op stadswoningen en appartementen in Antwerpen.',
+           '+32 3 234 56 78',
+           'contact@urbanhomes.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Gent Property Partners',
+           '/img/Emlak2.jpg',
+           'Betrouwbare partner voor verhuur en verkoop van vastgoed in Gent en omgeving.',
+           '+32 9 210 98 76',
+           'info@gentproperty.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Leuven Living Real Estate',
+           '/img/emlak3.jpg',
+           'Gespecialiseerd in vastgoed voor gezinnen, expats en studenten in Leuven.',
+           '+32 16 345 67 89',
+           'hello@leuvenliving.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Bruges Heritage Realty',
+           '/img/EmlakKonut.jpg',
+           'Vastgoedkantoor met focus op historisch en karaktervol vastgoed in Brugge.',
+           '+32 50 456 12 34',
+           'info@brugesheritage.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Coastline Estates Ostend',
+           '/img/emlak5.jpg',
+           'Vastgoedkantoor gespecialiseerd in kustvastgoed aan de Belgische zee.',
+           '+32 59 678 90 12',
+           'contact@coastlineestates.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Mechelen City Realty',
+           '/img/emlak6.jpg',
+           'Lokale vastgoedspecialist voor woningen en appartementen in Mechelen.',
+           '+32 15 123 45 67',
+           'info@mechelencity.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Hasselt Home Experts',
+           '/img/emlak8.jpg',
+           'Professioneel vastgoedkantoor met persoonlijke begeleiding in Limburg.',
+           '+32 11 234 56 78',
+           'contact@hasselthomes.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Namur Prestige Properties',
+           '/img/emlak6.jpg',
+           'Gespecialiseerd in exclusief vastgoed en villa’s in en rond Namen.',
+           '+32 81 345 67 89',
+           'info@namurprestige.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Liège Residential Group',
+           '/img/emlak3.jpg',
+           'Ervaren vastgoedmakelaar voor residentieel vastgoed in Luik.',
+           '+32 4 456 78 90',
+           'contact@liegeresidential.be'
+       );
+
+INSERT INTO BEDRIJF (bedrijf_Name, image_url, description, phone, email)
+VALUES (
+           'Charleroi Invest Real Estate',
+           '/img/emlak5.jpg',
+           'Vastgoedpartner voor investeringen en betaalbare woningen in Charleroi.',
+           '+32 71 567 89 01',
+           'info@charleroiinvest.be'
+       );
+
+---
 
     --Agent
 
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Gent Property Partners'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES ('Marie Claes', 'marie.claes@example.be', '+32470123459', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Louis Hermans', 'louis.hermans@example.be', '+32470123460', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES ('Sophie Dubois', 'sophie.dubois@example.be', '+32470123461', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Jules Lambert', 'jules.lambert@example.be', '+32470123462', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Léa Moreau', 'lea.moreau@example.be', '+32470123463',  'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
-INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Victor De Smet', 'victor.desmet@example.be', '+32470123464', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Lucas Peeters', 'lucas.peeters@example.be', '+32470123456', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Gent Property Partners'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES ('Emma Janssens', 'emma.janssens@example.be', '+32470123457', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Noah Vermeulen', 'noah.vermeulen@example.be', '+32470123458', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES ('Marie Claes', 'marie.claes@example.be', '+32470123459', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Louis Hermans', 'louis.hermans@example.be', '+32470123460', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES ('Sophie Dubois', 'sophie.dubois@example.be', '+32470123461', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Jules Lambert', 'jules.lambert@example.be', '+32470123462', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Léa Moreau', 'lea.moreau@example.be', '+32470123463',  'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO OWNER (owner_Name, email, phone_number, owner_type, bedrijf_id) VALUES('Victor De Smet', 'victor.desmet@example.be', '+32470123464', 'MAKELAAR',(SELECT id FROM BEDRIJF WHERE bedrijf_Name = 'Leuven Living Real Estate'));
 
---
+--Bedrijf
+
 -- Immommmo
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
@@ -474,105 +577,5 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
 
 --Immo
 
-
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Brussels Prime Realty',
-           '/img/emlak7.jpg',
-           'Professioneel vastgoedkantoor gespecialiseerd in residentieel en commercieel vastgoed in Brussel.',
-           '+32 2 512 34 56',
-           'info@brusselsprime.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Antwerp Urban Homes',
-           '/img/emlak.jpg',
-           'Modern vastgoedkantoor met focus op stadswoningen en appartementen in Antwerpen.',
-           '+32 3 234 56 78',
-           'contact@urbanhomes.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Gent Property Partners',
-           '/img/Emlak2.jpg',
-           'Betrouwbare partner voor verhuur en verkoop van vastgoed in Gent en omgeving.',
-           '+32 9 210 98 76',
-           'info@gentproperty.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Leuven Living Real Estate',
-           '/img/emlak3.jpg',
-           'Gespecialiseerd in vastgoed voor gezinnen, expats en studenten in Leuven.',
-           '+32 16 345 67 89',
-           'hello@leuvenliving.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Bruges Heritage Realty',
-           '/img/EmlakKonut.jpg',
-           'Vastgoedkantoor met focus op historisch en karaktervol vastgoed in Brugge.',
-           '+32 50 456 12 34',
-           'info@brugesheritage.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Coastline Estates Ostend',
-           '/img/emlak5.jpg',
-           'Vastgoedkantoor gespecialiseerd in kustvastgoed aan de Belgische zee.',
-           '+32 59 678 90 12',
-           'contact@coastlineestates.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Mechelen City Realty',
-           '/img/emlak6.jpg',
-           'Lokale vastgoedspecialist voor woningen en appartementen in Mechelen.',
-           '+32 15 123 45 67',
-           'info@mechelencity.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Hasselt Home Experts',
-           '/img/emlak8.jpg',
-           'Professioneel vastgoedkantoor met persoonlijke begeleiding in Limburg.',
-           '+32 11 234 56 78',
-           'contact@hasselthomes.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Namur Prestige Properties',
-           '/img/emlak6.jpg',
-           'Gespecialiseerd in exclusief vastgoed en villa’s in en rond Namen.',
-           '+32 81 345 67 89',
-           'info@namurprestige.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Liège Residential Group',
-           '/img/emlak3.jpg',
-           'Ervaren vastgoedmakelaar voor residentieel vastgoed in Luik.',
-           '+32 4 456 78 90',
-           'contact@liegeresidential.be'
-       );
-
-INSERT INTO BEDRIJF (name, image_url, description, phone, email)
-VALUES (
-           'Charleroi Invest Real Estate',
-           '/img/emlak5.jpg',
-           'Vastgoedpartner voor investeringen en betaalbare woningen in Charleroi.',
-           '+32 71 567 89 01',
-           'info@charleroiinvest.be'
-       );
 
 

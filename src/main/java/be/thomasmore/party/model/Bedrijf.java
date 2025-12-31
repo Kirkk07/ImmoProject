@@ -10,7 +10,7 @@ public class Bedrijf {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
+    private String bedrijfName;
     private String imageUrl;
     private String description;
     private String phone;
@@ -24,12 +24,12 @@ public class Bedrijf {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getBedrijfName() {
+        return bedrijfName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBedrijfName(String name) {
+        this.bedrijfName = name;
     }
 
 
