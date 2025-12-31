@@ -41,8 +41,7 @@
 <!--                </li>   <li class="list-group-item">-->
                 <li class="list-group-item">
                     Owner:
-                    <span th:if="*{owner != null}" th:text="|*{owner.ownerType} - *{owner.ownerName}|"></span>
-                    <span th:unless="*{owner != null}">Private owner</span>
+                    <a th:href="@{/ownerdetails/{id}(id=*{owner.id})}" th:text=" *{owner.ownerName}"></a></h3>
                 </li>
 
 
