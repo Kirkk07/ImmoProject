@@ -3,6 +3,7 @@ package be.thomasmore.party.model;
 import jakarta.persistence.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Bedrijf {
@@ -76,4 +77,17 @@ public class Bedrijf {
     public void setOwner(Collection<Owner> owners) {
         this.owners = owners;
     }
+
+
+//    @OneToMany(mappedBy = "bedrijf")  // Property sınıfındaki 'bedrijf' alanına bak
+//    private Collection<Property> properties;  // <-- Thymeleaf bunu arıyor
+//
+//    // getter ve setter
+//    public Collection<Property> getProperties() {
+//        return properties;
+//    }
+//
+//    public void setProperties(Collection<Property> properties) {
+//        this.properties = properties;
+//    }
 }

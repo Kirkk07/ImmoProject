@@ -38,10 +38,6 @@
                 <li class="list-group-item">Email: <span th:text="*{email}"></span></li>
                 <li class="list-group-item">Phone: <span th:text="*{phone}"></span></li>
                 <li class="list-group-item">
-                    Owners:
-<!--                    <ul>-->
-<!--                        <li th:each="o : *{owners}" th:text="|${o.ownerType} - ${o.ownerName}|"></li>-->
-<!--                    </ul>-->
 
                 </li>
 
@@ -54,7 +50,7 @@
 <!--        WIGEAAT-->
 
         <div class="container mt-5 p-2 border-top" th:if="*{owners.size()>0}">
-            <h3 class="row my-3">wie gaat? </h3>
+            <h3 class="row my-3">Makelaars</h3>
             <div class="row my-1">
                 <div th:each="owner:*{owners}"
                      class="card-group col col-6 col-xl-4">
@@ -68,9 +64,30 @@
                 </div>
             </div>
         </div>
-<!--        WIGEAAT-->
-    </div>
 
+<!--        AGENTS-->
+
+    <!--        Properties-->
+
+<!--    <div class="container mt-5 p-2 border-top" th:if="*{owners.size()>0}">-->
+<!--        <h3 class="row my-3">Properties</h3>-->
+<!--        <div class="row my-1">-->
+<!--            <div th:each="property:*{properties}"-->
+<!--                 class="card-group col col-6 col-xl-4">-->
+<!--                <div class="card m-1 p-2 text-center">-->
+<!--                    <a th:href="@{/propertydetails/{id}(id=${property.id})}"-->
+<!--                       class="btn">-->
+<!--                        <h6 th:text="${property.titel}"></h6>-->
+
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!--        Properties-->
+
+    </div>
 </main>
 
 <main class="container" th:unless="${bedrijf}">

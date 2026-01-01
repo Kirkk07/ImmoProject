@@ -15,6 +15,8 @@ public class Owner {
     private String email;
     private String phoneNumber;
     private String ownerType;
+    private String imageUrl;
+
     //    // One user can have many properties
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY)
     private Collection<Property> properties;
@@ -32,8 +34,6 @@ public class Owner {
     public void setBedrijf(Bedrijf bedrijf) {
         this.bedrijf = bedrijf;
     }
-
-
 
     public String getOwnerType() {
         return ownerType;
@@ -59,19 +59,15 @@ public class Owner {
         this.properties = properties;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-
-
-
-
-
-
-    // Getter & Setter
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
-
-
-
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 

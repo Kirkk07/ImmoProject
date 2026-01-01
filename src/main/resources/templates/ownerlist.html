@@ -71,13 +71,20 @@
                            class="text-decoration-none text-black d-flex gap-3">
 
                             <!-- IMAGE -->
+
+                            <div class="col-md-3">
+                                <div class="egg-wrapper small-image">
+                                    <img th:src="@{*{imageUrl}}" alt="Property Image">
+                                </div>
+
+                            </div>
 <!--                            <img th:src="${owner.imageUrl}"-->
 <!--                                 class="rounded"-->
 <!--                                 style="width: 220px; height: 150px; object-fit: cover;">-->
 <!--                            owner_Name, email, phone_number, owner_type,-->
                             <!-- CONTENT -->
                             <div class="flex-grow-1">
-                                <h4 th:text="|€ *{ownerName}|"></h4>
+                                <h4 th:text="|*{ownerName}|"></h4>
                                 <h6 th:text="*{ownerType}"></h6>
 
 
