@@ -775,7 +775,127 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      (SELECT id FROM OWNER WHERE owner_Name = 'Louis Hermans'),
      'https://images.pexels.com/photos/261100/pexels-photo-261100.jpeg');
 
---Immo
+--EVENTS
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('Real Estate Investment Summit',
+     'https://example.com/event1.jpg',
+     'International summit about real estate and property investments.',
+     '2026-03-12',
+     '10:00:00',
+     'Brussels');
+
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('Property Development Networking',
+     'https://example.com/event2.jpg',
+     'Networking event for developers, investors and real estate agents.',
+     '2026-04-05',
+     '18:30:00',
+     'Antwerp');
+
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('Green Building Investment Forum',
+     'https://example.com/event3.jpg',
+     'Forum focused on sustainable and eco-friendly property investments.',
+     '2026-05-20',
+     '09:30:00',
+     'Ghent');
+
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('Luxury Real Estate Expo',
+     'https://example.com/event4.jpg',
+     'Expo showcasing luxury real estate projects.',
+     '2026-06-15',
+     '11:00:00',
+     'Knokke-Heist');
+
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('Student Property Investment Workshop',
+     'https://example.com/event5.jpg',
+     'Beginner-friendly workshop for student investors.',
+     '2026-02-22',
+     '14:00:00',
+     'Leuven');
+
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('Commercial Real Estate Conference',
+     'https://example.com/event6.jpg',
+     'Conference about offices and commercial real estate.',
+     '2026-09-10',
+     '09:00:00',
+     'Mechelen');
+
+INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
+    ('International Property Investors Meetup',
+     'https://example.com/event7.jpg',
+     'Meetup for international investors interested in Belgian property.',
+     '2026-11-03',
+     '17:00:00',
+     'Brussels');
+
+
+
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'International Property Investors Meetup'),
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'International Property Investors Meetup'),
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Hasselt Home Experts'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Namur Prestige Properties'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Luxury Real Estate Expo'),
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Luxury Real Estate Expo'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Green Building Investment Forum'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Property Development Networking'),
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Brussels Prime Realty'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Real Estate Investment Summit'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Leuven Living Real Estate'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Green Building Investment Forum'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Bruges Heritage Realty'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Property Development Networking'),
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Coastline Estates Ostend'));
+INSERT INTO event_bedrijven(events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Real Estate Investment Summit'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Mechelen City Realty'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+
+
+
+
+
 
 
 

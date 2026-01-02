@@ -27,10 +27,10 @@ public class EventController {
 
         Optional<Event> optionalEvent = eventRepository.findById(id);
         if (optionalEvent.isPresent()) {
-                    long nrOfAnimals = eventRepository.count();
-                    model.addAttribute("animal", optionalEvent.get());
-                    model.addAttribute("prevId", id > 1 ? id - 1 : nrOfAnimals);
-                    model.addAttribute("nextId", id < nrOfAnimals ? id + 1 : 1);
+                    long nrOfEvents = eventRepository.count();
+                    model.addAttribute("event", optionalEvent.get());
+                    model.addAttribute("prevId", id > 1 ? id - 1 : nrOfEvents);
+                    model.addAttribute("nextId", id < nrOfEvents ? id + 1 : 1);
         }
                 return "eventdetails";
     }

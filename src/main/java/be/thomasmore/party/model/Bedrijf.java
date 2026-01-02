@@ -17,6 +17,12 @@ public class Bedrijf {
     private String phone;
     private String email;
 
+    @ManyToMany(mappedBy = "bedrijven")
+    private Collection<Event> events;
+
+    @OneToMany(mappedBy = "bedrijf")
+    private Collection<Owner> owners;
+
     public Integer getId() {
         return id;
     }
@@ -67,14 +73,21 @@ public class Bedrijf {
     }
 
 
-    @OneToMany(mappedBy = "bedrijf")
-    private Collection<Owner> owners;
+    public Collection<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Collection<Event> events) {
+        this.events = events;
+    }
+
+
 
     public Collection<Owner> getOwners() {
         return owners;
     }
 
-    public void setOwner(Collection<Owner> owners) {
+    public void setOwners(Collection<Owner> owners) {
         this.owners = owners;
     }
 
