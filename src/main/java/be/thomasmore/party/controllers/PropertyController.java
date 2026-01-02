@@ -39,7 +39,6 @@ public class PropertyController {
             @RequestParam(required = false) Double amount,
             @RequestParam(required = false) Integer months,
             Model model) {
-
         // Property listesi
         List<Property> properties = propertyRepository.filterByProperties(
                 city, rooms, minPrice, maxPrice, statusType, propertyType, area
