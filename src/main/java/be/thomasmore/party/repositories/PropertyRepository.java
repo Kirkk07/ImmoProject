@@ -26,7 +26,7 @@ public interface PropertyRepository extends CrudRepository<Property, Integer> {
             @Param("maxPrice") Integer maxPrice,
             @Param("statusType") String statusType,
             @Param("propertyType") String propertyType,
-            @Param("area") String area
+            @Param("area") Integer area
     );
 
 
