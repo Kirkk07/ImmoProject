@@ -4,8 +4,10 @@ package be.thomasmore.party.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 
-    @Entity
+
+@Entity
     public class Property {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +34,6 @@ import jakarta.persistence.*;
         @JoinColumn(name = "owner_id")
         private Owner owner;
 
-
-
         public Owner getOwner() {
             return owner;
         }
@@ -41,6 +41,19 @@ import jakarta.persistence.*;
         public void setOwner(Owner owner) {
             this.owner = owner;
         }
+
+//    @ManyToOne
+//    @JoinColumn(name = "bedrijf_id") // database’de foreign key
+//    private Bedrijf bedrijf;
+//
+//    // getter ve setter
+//    public Bedrijf getBedrijf() {
+//        return bedrijf;
+//    }
+//
+//    public void setBedrijf(Bedrijf bedrijf) {
+//        this.bedrijf = bedrijf;
+//    }
 
 
         // Getters and Setters

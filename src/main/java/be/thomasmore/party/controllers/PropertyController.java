@@ -35,17 +35,25 @@ public class PropertyController {
             @RequestParam(required = false) Integer maxPrice,
             @RequestParam(required = false) String statusType,
             @RequestParam(required = false) String propertyType,
-            @RequestParam(required = false) String area,
+            @RequestParam(required = false) Integer area,
+            @RequestParam(required = false) Double amount,
+            @RequestParam(required = false) Integer months,
             Model model) {
+        // Property listesi
+        List<Property> properties = propertyRepository.filterByProperties(
+                city, rooms, minPrice, maxPrice, statusType, propertyType, area
+        );
 
-        List<Property> properties =
-                propertyRepository.filterByProperties(city, rooms, minPrice,maxPrice,statusType,propertyType,area);
-        logger.info(String.format("PropertyList: city=%s, rooms=%s,minPrice=%s, maxPrice=%s, statusType=%s, propertyType=%s, area=%s", city, rooms, minPrice, maxPrice,statusType, propertyType, area));
         model.addAttribute("properties", properties);
-        long propertyCount = propertyRepository.count();
-        model.addAttribute("propertyCount", propertyCount);
+        model.addAttribute("propertyCount", propertyRepository.count());
+
+        // Kredi hesaplama ayrı metoda devredildi
+        calculateCredit(amount, months, model);
+
         return "propertylist";
     }
+
+
 
     @GetMapping({"/propertydetails/{id}", "/propertydetails"})
     public String propertyDetails(Model model, @PathVariable(required = false) Integer id) {
@@ -60,9 +68,29 @@ public class PropertyController {
         return "propertydetails";
     }
 
+    private void calculateCredit(Double amount, Integer months, Model model) {
+        if (amount == null || months == null) return;
 
+        double interest = 2.89; // sabit interest
 
+        // Ayları sınırla
+        if (months < 60) months = 60;
+        if (months > 240) months = 240;
+
+        double total = amount + (amount * interest / 100);
+        double monthlyPayment = total / months;
+
+        model.addAttribute("monthlyPayment", monthlyPayment);
+        model.addAttribute("amount", amount);
+        model.addAttribute("months", months);
+        model.addAttribute("interest", interest);
     }
+
+
+
+
+
+}
 
 
 

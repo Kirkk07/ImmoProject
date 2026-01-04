@@ -3,70 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <title>Let's party!</title>
+
     <!-- CSS -->
     <link href="/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<!-- Navbar -->
-<div th:replace="~{fragments/header :: navbar}"/>
 
+<!-- NAVBAR -->
+<div th:replace="~{fragments/header :: navbar}"></div>
 
+<!-- ================= STICKY SEARCH BAR ================= -->
+<div class="sticky-top bg-white border-bottom" style="top: 0; z-index: 1020;">
+    <div class="container-lg py-3">
+        <div class="d-flex align-items-center justify-content-between gap-3">
 
-<!--Search in ArtistList-->
-<div class="container">
-    <h1> Bedrijf List</h1>
-    <div class=" d-flex align-items-center justify-content-between mb-3 col-12">
-        <p class="mb-0">Er zijn in totaal <b th:text="${artistCount}">0</b> artist.</p>
-        <form th:action="@{/artistlist}" method="get" class="d-flex align-items-center gap-2 w-25">
-            <input type="text" class="form-control" placeholder="Zoek" aria-label="search" name="search" th:value="${param.search}">
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+            <!-- LEFT INFO -->
+            <p class="mb-0">
+                Er zijn in totaal
+                <b th:text="${artistCount}">0</b> artist.
+            </p>
 
-        </form>
-    </div>
+            <!-- SEARCH FORM -->
+            <form th:action="@{/artistlist}" method="get" class="d-flex gap-2">
+                <input type="text"
+                       class="form-control"
+                       placeholder="Zoek"
+                       name="search"
+                       th:value="${param.search}">
+                <button class="btn btn-outline-secondary" type="submit">
+                    Search
+                </button>
+            </form>
 
-
-    <!--    Old version of Venuelist-->
-
-    <!--<div class="">-->
-    <!--    <a th:href="@{/venuedetails/1}" class="btn btn-primary m-3">/1</a>-->
-    <!--    <a th:href="@{/venuedetails/2}" class="btn btn-primary m-3">/2</a>-->
-    <!--    <a th:href="@{/venuedetails/3}" class="btn btn-primary m-3">/3</a>-->
-
-    <!--</div>-->
-    <!--    Iterated version of Venuelist-->
-
-    <div class="row ">
-        <div th:each="bedrijf: ${bedrijven}"
-             th:object="${bedrijf}"
-             class="card-group col col-12 col-sm-6 col md-4 col-lg-3 col-xl-2">
-            <div class="card m-1 p-2 text-center">
-                <a th:href="@{|bedrijfdetails/*{id}|}" class="text-decoration-none d-block">
-                    <!-- Resim -->
-                    <div>
-                        <img th:src="${bedrijf.imageUrl}"
-                             alt="artist image"
-                             class="img-fluid rounded"
-                             style="max-width: 100%;">
-                    </div>
-                    <!-- Name -->
-                    <h3 th:text="*{name}" class="text-black mb-2"></h3>
-                </a>
-            </div>
         </div>
     </div>
 </div>
 
+<!-- ================= MAIN CONTENT   ================= -->
+<div class="container-lg mt-4">
+    <div class="row justify-content-center">
 
+        <!-- SOL: BEDRIJF LIST -->
+        <div class="col-12 col-lg-8">
 
-<!--Footer-->
+            <h2 class="mb-3">Bedrijf List</h2>
 
+            <div class="row">
+                <div th:each="bedrijf: ${bedrijven}"
+                     th:object="${bedrijf}"
+                     class="col-12 col-sm-6 col-md-4 col-lg-6 col-xl-4 mb-3">
 
+                    <div class="card h-100 p-2">
+                        <a th:href="@{|bedrijfdetails/*{id}|}"
+                           class="text-decoration-none text-center text-black">
 
+                            <!-- IMAGE -->
+                            <img th:src="${bedrijf.imageUrl}"
+                                 alt="bedrijf image"
+                                 class="img-fluid rounded mb-2"
+                                 style="height: 180px; width: 100%; object-fit: cover;">
 
-<!--    Footer-->
-<div th:replace=" ~{fragments/footer :: footer}"/>
+                            <!-- NAME -->
+                            <h5 th:text="*{bedrijfName}" class="mb-0"></h5>
+
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SAĞ: SIDEBAR -->
+        <div class="col-12 col-lg-4">
+            <div class="sticky-top" style="top: 90px;">
+
+                <h5 class="mb-3">⭐ Populaire Bedrijven</h5>
+
+                <div class="card mb-3">
+                    <img src="/img/demo1.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h6>Demo Bedrijf 1</h6>
+                        <small>Amsterdam</small>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <img src="/img/demo2.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h6>Demo Bedrijf 2</h6>
+                        <small>Rotterdam</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div th:replace="~{fragments/footer :: footer}"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!--<p th:text="${currentUrl}"></p>-->
+
 </body>
 </html>

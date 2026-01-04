@@ -46,6 +46,9 @@ public class BedrijfController {
         Optional<Bedrijf> optionalBedrijf = bedrijfRepository.findById(id);
         long count = bedrijfRepository.count();
         if (optionalBedrijf.isPresent()) {
+            System.out.println(
+                    "Owner count = " + optionalBedrijf.get().getOwners().size()
+            );
 
             model.addAttribute("bedrijf", optionalBedrijf.get());
             model.addAttribute("prevId", id > 1 ? id - 1 : count);

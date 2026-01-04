@@ -1,9 +1,9 @@
 package be.thomasmore.party.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class Bedrijf {
@@ -11,13 +11,17 @@ public class Bedrijf {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-
-
+    private String bedrijfName;
     private String imageUrl;
     private String description;
     private String phone;
     private String email;
+
+    @ManyToMany(mappedBy = "bedrijven")
+    private Collection<Event> events;
+
+    @OneToMany(mappedBy = "bedrijf")
+    private Collection<Owner> owners;
 
     public Integer getId() {
         return id;
@@ -27,12 +31,12 @@ public class Bedrijf {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getBedrijfName() {
+        return bedrijfName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setBedrijfName(String name) {
+        this.bedrijfName = name;
     }
 
 
@@ -68,4 +72,35 @@ public class Bedrijf {
         this.email = email;
     }
 
+
+    public Collection<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Collection<Event> events) {
+        this.events = events;
+    }
+
+
+
+    public Collection<Owner> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(Collection<Owner> owners) {
+        this.owners = owners;
+    }
+
+
+//    @OneToMany(mappedBy = "bedrijf")  // Property sınıfındaki 'bedrijf' alanına bak
+//    private Collection<Property> properties;  // <-- Thymeleaf bunu arıyor
+//
+//    // getter ve setter
+//    public Collection<Property> getProperties() {
+//        return properties;
+//    }
+//
+//    public void setProperties(Collection<Property> properties) {
+//        this.properties = properties;
+//    }
 }

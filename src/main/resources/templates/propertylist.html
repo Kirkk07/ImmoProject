@@ -218,35 +218,87 @@
             </div>
         </div>
 
-        <!-- SAĞ: BESTSELLER -->
+        <!-- SAĞ: Calculator -->
         <div class="col-12 col-lg-4">
             <div class="sticky-top" style="top: 80px;">
-                <h5 class="mb-3">🔥 En iyi fırsatlar</h5>
 
-                <div class="card mb-3">
-                    <img src="/img/demo1.jpg" class="card-img-top" alt="">
+                <div class="card shadow-sm">
                     <div class="card-body">
-                        <h6>€ 275.000</h6>
-                        <p class="mb-0">2 slp · 85 m²</p>
-                        <small>Amsterdam</small>
+
+                        <h5 class="card-title mb-3 text-center">
+                            💳 Credit Calculator
+                        </h5>
+
+                        <form th:action="@{/propertylist}" method="get">
+
+                            <!-- FILTER STATE -->
+                            <input type="hidden" name="statusType"
+                                   th:if="${param.statusType != null and param.statusType != ''}"
+                                   th:value="${param.statusType}">
+                            <input type="hidden" name="city"
+                                   th:if="${param.city != null and param.city != ''}"
+                                   th:value="${param.city}">
+                            <input type="hidden" name="minPrice"
+                                   th:if="${param.minPrice != null and param.minPrice != ''}"
+                                   th:value="${param.minPrice}">
+                            <input type="hidden" name="maxPrice"
+                                   th:if="${param.maxPrice != null and param.maxPrice != ''}"
+                                   th:value="${param.maxPrice}">
+                            <input type="hidden" name="rooms"
+                                   th:if="${param.rooms != null and param.rooms != ''}"
+                                   th:value="${param.rooms}">
+                            <input type="hidden" name="propertyType"
+                                   th:if="${param.propertyType != null and param.propertyType != ''}"
+                                   th:value="${param.propertyType}">
+                            <input type="hidden" name="area"
+                                   th:if="${param.area != null and param.area != ''}"
+                                   th:value="${param.area}">
+
+                            <!-- INPUTS -->
+                            <!-- INPUTS -->
+                            <div class="mb-2">
+                                <label class="form-label">Credit Amount (€)</label>
+                                <input type="number" step="0.01"
+                                       class="form-control"
+                                       name="amount"
+                                       th:value="${param.amount}"
+                                       required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Months (60-240)</label>
+                                <input type="number"
+                                       class="form-control"
+                                       name="months"
+                                       th:value="${param.months}"
+                                       min="60" max="240"
+                                       required>
+                            </div>
+
+                            <!-- Interest sabit -->
+                            <div class="mb-3">
+                                <label class="form-label">Interest (%)</label>
+                                <input type="text" class="form-control" value="2.89" readonly>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Hesapla</button>
+                        </form>
+
+                        <!-- RESULT -->
+                        <div th:if="${monthlyPayment != null}" class="alert alert-success text-center mt-3">
+                            <small>Maandelijke Afbetaling</small>
+                            <h5 class="mb-0">
+                                <span th:text="${#numbers.formatDecimal(monthlyPayment,1,2)}"></span> €
+                            </h5>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="card mb-3">
-                    <img src="/img/demo2.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                        <h6>€ 310.000</h6>
-                        <p class="mb-0">3 slp · 102 m²</p>
-                        <small>Rotterdam</small>
-                    </div>
-                </div>
             </div>
         </div>
 
-    </div>
-</div>
-
-<!--    Footer-->
+        <!--    Footer-->
 <div th:replace=" ~{fragments/footer :: footer}"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </div>
