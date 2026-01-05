@@ -191,8 +191,90 @@ VALUES
      FALSE,
      FALSE,
      '2660','SALE',TRUE,
-     (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/845599/pexels-photo-845599.jpeg');
+     (SELECT id FROM OWNER WHERE owner_Name = 'Victor De Damme'),
+     '/img/garage1.jpg');
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL)
+VALUES
+    ('Private Garage Antwerp',
+     'Closed private garage suitable for one car',
+     900,
+     'GARAGE',
+     0,
+     0,
+     22,
+     'Kleine Markt 12',
+     'Antwerp',
+     TRUE,
+     TRUE,
+     '2000',
+     'RENT',
+     FALSE,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Laurent Simon' ),
+    '/img/garage2.jpg');
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL)
+VALUES
+    ('Underground Garage Brussels',
+     'Secure underground parking space',
+     300,
+     'GARAGE',
+     0,
+     0,
+     18,
+     'Rue de la Loi 45',
+     'Brussels',
+     FALSE,
+     TRUE,
+     '1040',
+     'RENT',
+     FALSE,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Robin Goossens' ),
+    '/img/garage3.jpg');
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL)
+VALUES
+    ('Street Level Garage Ghent',
+     'Street level garage with easy access',
+     21000,
+     'GARAGE',
+     0,
+     0,
+     24,
+     'Kortrijksesteenweg 88',
+     'Ghent',
+     TRUE,
+     TRUE,
+     '9000',
+     'SALE',
+     TRUE,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Jeroen Declercq'),
+    '/img/garage4.jpg');
+
+INSERT INTO PROPERTY
+(TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL)
+VALUES
+    ('Compact City Garage Leuven',
+     'Compact garage ideal for city parking',
+     19500,
+     'GARAGE',
+     0,
+     0,
+     17,
+     'Naamsestraat 31',
+     'Leuven',
+     TRUE,
+     TRUE,
+     '3000',
+     'SALE',
+     FALSE,
+     (SELECT id FROM OWNER WHERE owner_Name = 'Léa Moreau'),
+    '/img/garage5.jpg');
+
+
 
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
