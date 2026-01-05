@@ -156,7 +156,7 @@ VALUES
      TRUE,
      '2030','RENT',null,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg');
+     '/img/house1.jpg');
 
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
@@ -174,7 +174,7 @@ VALUES
      FALSE,
      '2000','RENT',null,
      (SELECT id FROM OWNER WHERE owner_Name = 'Léa Moreau'),
-     'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg');
+     '/img/house2.jpg');
 
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
@@ -266,7 +266,7 @@ VALUES
  FALSE,
  '2000','RENT',TRUE,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg');
+ '/img/house3.jpg');
 
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
@@ -338,7 +338,7 @@ VALUES
  FALSE,
  '4000','RENT',null,
  (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
- 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg');
+ '/img/house4.jpg');
 
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
@@ -374,7 +374,7 @@ VALUES
  FALSE,
  '5000','SALE',FALSE,
  (SELECT id FROM OWNER WHERE owner_Name = 'Bram Van Acker'),
- 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg');
+ '/img/house5.jpg');
 
 INSERT INTO PROPERTY
 (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE,  ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE,STATUS_TYPE,RENOVATION_NEEDED,OWNER_ID, IMAGE_URL)
@@ -448,7 +448,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg');
+     '/img/house6.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Luxury Penthouse with Terrace',
@@ -484,7 +484,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg');
+     '/img/house7.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Compact Studio Apartment',
@@ -538,7 +538,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      TRUE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg');
+     '/img/house8.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('New Build Apartment',
@@ -574,7 +574,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      NULL,
      (SELECT id FROM OWNER WHERE owner_Name = 'Lucas Peeters'),
-     'https://images.pexels.com/photos/164558/pexels-photo-164558.jpeg');
+     '/img/house9.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Minimalist City Apartment',
@@ -611,7 +611,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Marie Claes'),
-     'https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg');
+     '/img/house10.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Penthouse in Antwerp Centre',
@@ -647,7 +647,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Léa Moreau'),
-     'https://images.pexels.com/photos/261093/pexels-photo-261093.jpeg');
+     '/img/house11.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Modern Loft in Ghent',
@@ -701,7 +701,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Kevin De Wilde'),
-     'https://images.pexels.com/photos/261096/pexels-photo-261096.jpeg');
+     '/img/house12.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Cozy Studio in Liège',
@@ -719,7 +719,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'RENT',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Julien Moreau'),
-     'https://images.pexels.com/photos/261097/pexels-photo-261097.jpeg');
+     '/img/house13.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Beach House in Ostend',
@@ -737,7 +737,7 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Pieter Maes'),
-     'https://images.pexels.com/photos/261098/pexels-photo-261098.jpeg');
+     '/img/house14.jpg');
 
 INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS, AREA, ADDRESS, CITY, HAS_PARKING, NEAR_PUBLIC_TRANSPORT, POSTCODE, STATUS_TYPE, RENOVATION_NEEDED, OWNER_ID, IMAGE_URL) VALUES
     ('Renovated Penthouse in Charleroi',
@@ -773,12 +773,12 @@ INSERT INTO PROPERTY (TITLE, DESCRIPTION, PRICE, PROPERTY_TYPE, ROOMS, BATHROOMS
      'SALE',
      FALSE,
      (SELECT id FROM OWNER WHERE owner_Name = 'Louis Hermans'),
-     'https://images.pexels.com/photos/261100/pexels-photo-261100.jpeg');
+     '/img/house15.jpg');
 
 --EVENTS
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('Real Estate Investment Summit',
-     'https://example.com/event1.jpg',
+     '/img/event1.jpg',
      'International summit about real estate and property investments.',
      '2026-03-12',
      '10:00:00',
@@ -786,7 +786,7 @@ INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, 
 
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('Property Development Networking',
-     'https://example.com/event2.jpg',
+     '/img/event2.jpg',
      'Networking event for developers, investors and real estate agents.',
      '2026-04-05',
      '18:30:00',
@@ -794,7 +794,7 @@ INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, 
 
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('Green Building Investment Forum',
-     'https://example.com/event3.jpg',
+     '/img/event3.jpg',
      'Forum focused on sustainable and eco-friendly property investments.',
      '2026-05-20',
      '09:30:00',
@@ -802,7 +802,7 @@ INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, 
 
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('Luxury Real Estate Expo',
-     'https://example.com/event4.jpg',
+     '/img/event4.jpg',
      'Expo showcasing luxury real estate projects.',
      '2026-06-15',
      '11:00:00',
@@ -810,7 +810,7 @@ INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, 
 
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('Student Property Investment Workshop',
-     'https://example.com/event5.jpg',
+     '/img/event5.jpg',
      'Beginner-friendly workshop for student investors.',
      '2026-02-22',
      '14:00:00',
@@ -818,7 +818,7 @@ INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, 
 
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('Commercial Real Estate Conference',
-     'https://example.com/event6.jpg',
+     '/img/event6.jpg',
      'Conference about offices and commercial real estate.',
      '2026-09-10',
      '09:00:00',
@@ -826,7 +826,7 @@ INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, 
 
 INSERT INTO EVENT (event_title, image_url, description, event_date, event_time, event_location) VALUES
     ('International Property Investors Meetup',
-     'https://example.com/event7.jpg',
+     '/img/event8.jpg',
      'Meetup for international investors interested in Belgian property.',
      '2026-11-03',
      '17:00:00',
@@ -845,7 +845,7 @@ VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment W
         (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'International Property Investors Meetup'),
-        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Coastline Estates Ostend'));
 INSERT INTO event_bedrijven(events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
         (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Hasselt Home Experts'));
@@ -854,28 +854,28 @@ VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment W
         (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Namur Prestige Properties'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Luxury Real Estate Expo'),
-        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_name = 'Namur Prestige Properties'));
 INSERT INTO event_bedrijven(events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Luxury Real Estate Expo'),
         (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
-        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Mechelen City Realty'));
 INSERT INTO event_bedrijven(events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
-        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Bruges Heritage Realty'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Green Building Investment Forum'),
-        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Liège Residential Group'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Property Development Networking'),
         (SELECT id FROM bedrijf WHERE bedrijf_name = 'Brussels Prime Realty'));
 INSERT INTO event_bedrijven(events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Real Estate Investment Summit'),
-        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Liège Residential Group'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
-        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Bruges Heritage Realty'));
 INSERT INTO event_bedrijven(events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Commercial Real Estate Conference'),
         (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Leuven Living Real Estate'));
@@ -890,7 +890,10 @@ VALUES ((SELECT id FROM event WHERE event_title = 'Real Estate Investment Summit
         (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Mechelen City Realty'));
 INSERT INTO event_bedrijven (events_id, bedrijven_id)
 VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
-        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Antwerp Urban Homes'));
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Hasselt Home Experts'));
+INSERT INTO event_bedrijven (events_id, bedrijven_id)
+VALUES ((SELECT id FROM event WHERE event_title = 'Student Property Investment Workshop'),
+        (SELECT id FROM bedrijf WHERE bedrijf_Name = 'Gent Property Partners'));
 
 
 
